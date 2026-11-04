@@ -1,0 +1,4 @@
+<script>(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;var h=a.getAttribute('href')||'';var sec=(a.closest('section,header,nav,.ghp,.strip,footer')||{}).id||(a.closest('.ghp')?'popup':'')||'';var label=(a.textContent||'').trim().slice(0,40);
+if(h.indexOf('pf.kakao.com')>-1){var ins=a.closest('#life')||/인생 후반/.test(label);gtag('event',ins?'insurance_click':'kakao_click',{link_text:label,section:sec});}
+else if(h.indexOf('tel:')===0){gtag('event','phone_click',{link_text:label,section:sec});}
+else if(h.indexOf('#events')>-1||a.id==='evStrip'){gtag('event','event_strip_click',{section:sec});}},true);})();</script>

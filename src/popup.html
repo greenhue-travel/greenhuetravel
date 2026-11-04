@@ -1,0 +1,70 @@
+<!-- GH event popup -->
+<style>
+.ghp{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(10,30,24,.45);backdrop-filter:blur(2px)}
+.ghp.on{display:flex;animation:ghpf .35s ease}
+@keyframes ghpf{from{opacity:0}to{opacity:1}}
+.ghp-box{position:relative;width:100%;max-width:720px;max-height:calc(100svh - 32px);overflow:auto;background:#fffdf7;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.28);font-family:'Noto Sans KR',system-ui,sans-serif;color:#1d2a24}
+.ghp-top{background:linear-gradient(120deg,#e9f6f1 0%,#fff6dd 100%);padding:20px 22px 14px;text-align:center}
+.ghp-rib{display:inline-block;font-size:11px;letter-spacing:.06em;color:#1d5a45;background:#fff;border:1px solid #d9e7df;border-radius:30px;padding:4px 12px}
+.ghp-rib b{color:#a8853f}
+.ghp-top h3{font-family:'Noto Serif KR',Georgia,serif;font-size:23px;margin:10px 0 4px;color:#13261e;letter-spacing:-.01em}
+.ghp-top p{margin:0;font-size:13px;color:#4c5a53}
+.ghp-x{position:absolute;right:10px;top:10px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.9);font-size:20px;line-height:34px;color:#1d2a24;cursor:pointer;z-index:2}
+.ghp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 18px 6px}
+.ghp-c{border:1px solid #ece6d6;border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.ghp-ph{position:relative;height:132px}.ghp-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ghp-tag{position:absolute;left:10px;top:10px;font-size:10.5px;font-weight:700;letter-spacing:.12em;background:#fff;color:#1d5a45;padding:3px 9px;border-radius:20px}
+.ghp-tag.v{color:#b3422d}
+.ghp-bd{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1}
+.ghp-bd small{font-size:11.5px;color:#a8853f;font-weight:700}
+.ghp-bd h4{font-family:'Noto Serif KR',Georgia,serif;font-size:16.5px;margin:3px 0 0;color:#13261e;line-height:1.35}
+.ghp-pr{margin-top:8px;font-family:'Noto Serif KR',Georgia,serif;font-size:24px;font-weight:700;color:#1d5a45}
+.ghp-pr span{font-family:'Noto Sans KR';font-size:11.5px;font-weight:500;color:#5f6d65;margin-left:4px}
+.ghp-ch{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.ghp-ch i{font-style:normal;font-size:11px;background:#fff6dd;color:#7a5d1f;border:1px solid #f0e2b8;border-radius:20px;padding:2px 8px}
+.ghp-ch i.g{background:#e9f6f1;color:#1d5a45;border-color:#cfe6dc}
+.ghp-nt{font-size:11px;color:#5f6d65;margin-top:7px}
+.ghp-go{margin-top:auto;padding-top:12px}.ghp-go a{display:block;text-align:center;background:#fee500;color:#191919;font-weight:700;font-size:13.5px;border-radius:10px;padding:10px 0;text-decoration:none}
+.ghp-ft{display:flex;justify-content:space-between;align-items:center;padding:8px 20px 14px;font-size:12.5px;color:#5f6d65}
+.ghp-ft button{background:none;border:0;font:inherit;color:#5f6d65;cursor:pointer;padding:6px 0}
+.ghp-ft button.c{color:#1d2a24;font-weight:700}
+@media (max-width:640px){.ghp{padding:10px;align-items:flex-end}.ghp-box{border-radius:16px 16px 12px 12px}.ghp-top{padding:16px 16px 10px}.ghp-top h3{font-size:19px}.ghp-grid{grid-template-columns:1fr;gap:10px;padding:12px 12px 4px}
+.ghp-c{flex-direction:row}.ghp-ph{width:108px;height:auto;flex:none}.ghp-bd{padding:10px 12px}.ghp-bd h4{font-size:14.5px}.ghp-pr{font-size:19px;margin-top:4px}.ghp-ch{margin-top:6px}.ghp-ch i{font-size:10.5px;padding:1px 7px}.ghp-nt{display:none}.ghp-go{padding-top:8px}.ghp-go a{padding:8px 0;font-size:12.5px}.ghp-ft{padding:6px 16px 12px}.ghp-top{padding-top:46px}.ghp-rib{font-size:9.5px;letter-spacing:0;padding:3px 10px}.ghp-top p{font-size:12px}}
+</style>
+<div class="ghp" id="ghPop" role="dialog" aria-modal="true" aria-label="그린휴 골프대회 안내">
+ <div class="ghp-box">
+  <button class="ghp-x" type="button" aria-label="닫기" data-ghp="close">&times;</button>
+  <div class="ghp-top">
+   <span class="ghp-rib">SONO HOTELS &amp; RESORTS 공식 이벤트 · 공식 접수처 <b>GREEN:休</b></span>
+   <h3>올겨울, 회원님을 위한 골프 축제</h3>
+   <p>괌의 바다와 하이퐁의 햇살 위에서, 라운딩부터 만찬까지 즐거움만 챙겨 가세요</p>
+  </div>
+  <div class="ghp-grid">
+   <div class="ghp-c" data-until="2026-11-19">
+    <div class="ghp-ph"><img src="assets/gu-signature.jpg" alt="괌 망길라오 골프클럽 바다 전경" style="object-position:50% 40%"><span class="ghp-tag">괌</span></div>
+    <div class="ghp-bd"><small>2026. 11. 19(목) – 22(일)</small><h4>소노펠리체 CC 괌<br>토너먼트 골프대회</h4>
+     <div class="ghp-pr">1,430,000원<span>소노회원가 · 항공 별도</span></div>
+     <div class="ghp-ch"><i>드론 촬영</i><i>홀인원 차량</i><i>갈라 만찬 · 주류 무제한</i><i class="g">ETA · 여행자보험 포함</i></div>
+     <div class="ghp-nt">회원 1명 + 동반 3명까지 회원가 · 클럽 중식 3회 · 전 구간 송영</div>
+     <div class="ghp-go"><a href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">카톡으로 바로 신청</a></div></div>
+   </div>
+   <div class="ghp-c" data-until="2026-12-03">
+    <div class="ghp-ph"><img src="assets/ev-awards-2026.jpg" alt="2026 소노 회원 골프 어워즈 트로피" style="object-position:50% 30%"><span class="ghp-tag v">베트남</span></div>
+    <div class="ghp-bd"><small>2026. 12. 3(목) – 7(월) · 3박 5일</small><h4>2026 소노 회원 골프 어워즈<br>소노펠리체 CC 하이퐁</h4>
+     <div class="ghp-pr">1,580,000원<span>소노회원가 · 항공 포함</span></div>
+     <div class="ghp-ch"><i>풀사이드 BBQ 만찬</i><i>주류 무제한 만찬</i><i>MC 진행 · 시상</i><i class="g">항공 · 미팅 · 샌딩 포함</i></div>
+     <div class="ghp-nt">소노회원 50명 한정 · 회원 1명 + 동반 3명 회원가 · 전 일정 식사</div>
+     <div class="ghp-go"><a href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">카톡으로 바로 신청</a></div></div>
+   </div>
+  </div>
+  <div class="ghp-ft"><button type="button" data-ghp="today">오늘 하루 보지 않기</button><button type="button" class="c" data-ghp="close">닫기</button></div>
+ </div>
+</div>
+<script>
+(function(){var p=document.getElementById('ghPop');if(!p)return;var k='gh_pop_hide',t=new Date().toISOString().slice(0,10),h=null;
+try{h=localStorage.getItem(k);}catch(e){}
+if(h!==t||/popup/.test(location.search)){setTimeout(function(){if(p.querySelector('.ghp-c'))p.classList.add('on');},1200);}
+function close(){p.classList.remove('on');}
+p.addEventListener('click',function(e){var a=e.target.getAttribute&&e.target.getAttribute('data-ghp');if(e.target===p||a==='close'){close();}if(a==='today'){try{localStorage.setItem(k,t);}catch(x){}close();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
