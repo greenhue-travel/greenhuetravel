@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>온라인 결제 | 그린휴</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://js.tosspayments.com/v2/standard"></script>
+<style>
+:root{--g:#0f241b;--g2:#1d3d2b;--au:#c6a66a;--iv:#f4efe4;--pp:#fbf8f1;--ink:#1f2723;--mu:#6b736e;--ln:#e5ded0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--pp);color:var(--ink);font-family:"Noto Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:16px;line-height:1.6;word-break:keep-all}
+.top{background:var(--g);color:#fff}
+.top .in{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.top a{color:#fff;text-decoration:none;font-size:14px;opacity:.85}
+.top img{height:26px;display:block}
+.wrap{max-width:760px;margin:0 auto;padding:26px 16px 50px}
+h1{font-family:"Noto Serif KR",serif;font-size:27px;color:var(--g);margin:0 0 4px}
+.sub{color:var(--mu);font-size:14.5px;margin:0 0 24px}
+.step{background:#fff;border:1px solid var(--ln);border-radius:14px;padding:20px 18px;margin-bottom:16px}
+.step h2{font-size:17px;margin:0 0 14px;color:var(--g);display:flex;gap:8px;align-items:center}
+.step h2 b{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--g);color:#fff;font-size:13px;align-items:center;justify-content:center}
+.prod{display:grid;gap:10px}
+.prod label{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--ln);border-radius:12px;padding:14px;cursor:pointer;background:#fff}
+.prod label:has(input:checked){border-color:var(--g);background:#f3f6f2}
+.prod input{margin-top:5px;accent-color:var(--g);width:18px;height:18px;flex:none}
+.prod .n{font-weight:700;font-size:16px}
+.prod .d{font-size:13.5px;color:var(--mu);margin-top:2px}
+.prod .p{margin-left:auto;text-align:right;white-space:nowrap;font-weight:700;color:var(--g)}
+.prod .p small{display:block;font-weight:400;color:var(--mu);font-size:12px}
+.row{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.row span{font-size:15px;color:var(--mu)}
+.qty{display:flex;border:1px solid var(--ln);border-radius:10px;overflow:hidden}
+.qty button{width:42px;height:42px;border:0;background:var(--iv);font-size:20px;color:var(--g);cursor:pointer}
+.qty output{width:52px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.f{display:grid;gap:12px}
+.f label{font-size:14px;color:var(--mu);display:grid;gap:5px}
+.f input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--ln);border-radius:10px;background:#fff;width:100%}
+.sum{background:var(--g);color:#fff;border-radius:14px;padding:18px;margin-bottom:16px}
+.sum .l{display:flex;justify-content:space-between;font-size:14.5px;opacity:.9;margin:3px 0}
+.sum .t{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(255,255,255,.2);margin-top:10px;padding-top:12px}
+.sum .t b{font-family:"Noto Serif KR",serif;font-size:27px;color:var(--au)}
+.agree{font-size:14px;display:grid;gap:8px;margin:4px 0 2px}
+.agree label{display:flex;gap:8px;align-items:flex-start}
+.agree input{accent-color:var(--g);width:18px;height:18px;margin-top:3px;flex:none}
+.agree a{color:var(--g)}
+#pay{width:100%;height:56px;border:0;border-radius:12px;background:var(--au);color:var(--g);font-size:18px;font-weight:700;cursor:pointer}
+#pay:disabled{opacity:.5;cursor:default}
+.note{font-size:13px;color:var(--mu);margin-top:10px}
+.err{color:#b3422d;font-size:14px;min-height:1.2em;margin-top:8px}
+footer{background:var(--g);color:rgba(255,255,255,.75);font-size:13px;line-height:1.8}
+footer .in{max-width:760px;margin:0 auto;padding:26px 16px 30px}
+footer b{color:#fff}
+footer a{color:var(--au)}
+</style></head><body>
+<div class="top"><div class="in"><a href="/"><img src="assets/logo-white.png" alt="그린휴"></a><a href="/">홈으로</a></div></div>
+<div class="wrap">
+<h1>온라인 결제</h1>
+<p class="sub">상담으로 확정하신 상품을 카드로 결제하실 수 있습니다. 결제 후 담당자가 예약 확정서를 보내 드립니다.</p>
+
+<div class="step"><h2><b>1</b>상품 선택</h2>
+<div class="prod" id="prod"></div>
+<div class="row"><span>인원</span><div class="qty"><button type="button" id="minus" aria-label="인원 줄이기">−</button><output id="q">1</output><button type="button" id="plus" aria-label="인원 늘리기">+</button></div><span id="qnote">명</span></div>
+</div>
+
+<div class="step"><h2><b>2</b>예약자 정보</h2>
+<div class="f">
+<label>예약자 성함<input id="nm" autocomplete="name" placeholder="홍길동"></label>
+<label>휴대폰 번호<input id="ph" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"></label>
+<label>이메일 (선택)<input id="em" inputmode="email" autocomplete="email" placeholder="예약 확정서를 받으실 주소"></label>
+<label>출발 예정일<input id="dt" type="date"></label>
+</div></div>
+
+<div class="sum"><div class="l"><span id="sn">상품</span><span id="su"></span></div><div class="l"><span>인원</span><span id="sq"></span></div>
+<div class="t"><span>결제 금액</span><b id="st"></b></div></div>
+
+<div class="step"><h2><b>3</b>결제 수단</h2>
+<div id="payment-method"></div>
+<div id="agreement"></div>
+<div class="agree">
+<label><input type="checkbox" id="a1"><span><a href="/refund.html" target="_blank">취소 및 환불 규정</a>을 확인했습니다. (필수)</span></label>
+<label><input type="checkbox" id="a2"><span>예약 진행을 위한 개인정보(성함·연락처·이메일) 수집과 이용에 동의합니다. (필수)</span></label>
+</div>
+<div class="err" id="err"></div>
+<button id="pay" type="button">결제하기</button>
+<p class="note">계좌이체를 원하시면 카카오톡 상담으로 말씀해 주세요. 계좌이체 시 5% 할인됩니다.</p>
+</div>
+</div>
+
+<footer><div class="in">
+<b>그린휴 GREEN:休</b><br>
+상호 그린휴 · 대표자 오선혜 · 사업자등록번호 822-16-02715<br>
+통신판매업신고번호 제2025-서울관악-1354호 · 관광사업 등록 여행업 제2025-000005호<br>
+사업장 주소 서울특별시 관악구 관악로 168, 409-마92호 (봉천동, 대우디오슈페리움 2단지)<br>
+대표전화 0503-7155-0662 · 휴대폰 010-2613-5313 · 이메일 celloceo0903@gmail.com<br>
+<a href="/refund.html">취소 및 환불 규정</a> · <a href="https://pf.kakao.com/_nHFmX">카카오톡 상담</a>
+</div></footer>
+
+<script>
+const CLIENT_KEY='test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm'; // 토스 테스트 키 (심사 후 실제 키로 교체)
+const P=[
+ {id:'hp3',n:'하이퐁 시그니처 3박 5일',d:'소노벨 하이퐁 3박·조식 · 소노펠리체 CC 18홀 3회 · 공항 송영 · 항공 별도',p:580000,u:'1인 지상비'},
+ {id:'hl4',n:'하이퐁 + 하롱 2색 4박 6일',d:'소노벨 하이퐁 · 소노펠리체 CC + 하롱 외부 골프 · 공항 송영 · 항공 별도',p:750000,u:'1인 지상비'},
+ {id:'hn4',n:'하이퐁 + 하노이 투코스',d:'소노벨 하이퐁 · 하노이 명문 코스 라운드 · 송영 · 항공 별도',p:830000,u:'1인 지상비'},
+ {id:'dep',n:'여행 예약금',d:'상담으로 일정이 정해진 여행의 예약금 · 잔금은 출발 전 별도 결제',p:300000,u:'1인'}
+];
+const today=new Date().toISOString().slice(0,10);
+const L=P.filter(x=>!x.until||today<x.until);
+const won=n=>n.toLocaleString('ko-KR')+'원';
+const box=document.getElementById('prod');
+box.innerHTML=L.map((x,i)=>`<label><input type="radio" name="p" value="${x.id}" ${i?'':'checked'}><div><div class="n">${x.n}</div><div class="d">${x.d}</div></div><div class="p">${won(x.p)}<small>${x.u}</small></div></label>`).join('');
+let q=1; const qo=document.getElementById('q');
+const cur=()=>L.find(x=>x.id===document.querySelector('input[name=p]:checked').value);
+const total=()=>cur().p*q;
+let widgets=null, ready=false;
+async function initWidget(){
+ try{
+  const tp=TossPayments(CLIENT_KEY);
+  widgets=tp.widgets({customerKey:TossPayments.ANONYMOUS});
+  await widgets.setAmount({currency:'KRW',value:total()});
+  await Promise.all([widgets.renderPaymentMethods({selector:'#payment-method',variantKey:'DEFAULT'}),widgets.renderAgreement({selector:'#agreement',variantKey:'AGREEMENT'})]);
+  ready=true;
+ }catch(e){document.getElementById('err').textContent='결제창을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.';}
+}
+function upd(){
+ const c=cur(); qo.textContent=q;
+ document.getElementById('sn').textContent=c.n; document.getElementById('su').textContent=won(c.p)+' / '+c.u;
+ document.getElementById('sq').textContent=q+'명'; document.getElementById('st').textContent=won(total());
+ if(widgets&&ready) widgets.setAmount({currency:'KRW',value:total()});
+}
+box.addEventListener('change',upd);
+document.getElementById('minus').onclick=()=>{if(q>1){q--;upd();}};
+document.getElementById('plus').onclick=()=>{if(q<20){q++;upd();}};
+upd(); if(window.TossPayments) initWidget();
+document.getElementById('pay').onclick=async()=>{
+ const e=document.getElementById('err'); e.textContent='';
+ const nm=document.getElementById('nm').value.trim(), ph=document.getElementById('ph').value.replace(/[^0-9]/g,''), em=document.getElementById('em').value.trim();
+ if(!nm) return e.textContent='예약자 성함을 입력해 주세요.';
+ if(ph.length<10) return e.textContent='휴대폰 번호를 확인해 주세요.';
+ if(!document.getElementById('a1').checked||!document.getElementById('a2').checked) return e.textContent='필수 항목에 동의해 주세요.';
+ if(!ready) return e.textContent='결제창을 불러오는 중입니다. 잠시 후 다시 눌러 주세요.';
+ const c=cur(), dt=document.getElementById('dt').value;
+ const oid='GH'+Date.now().toString(36).toUpperCase()+Math.random().toString(36).slice(2,6).toUpperCase();
+ try{
+  await widgets.requestPayment({orderId:oid,orderName:(c.n+' '+q+'명').slice(0,100),successUrl:location.origin+'/pay-success.html',failUrl:location.origin+'/pay-fail.html',customerName:nm,customerMobilePhone:ph,customerEmail:em||undefined,metadata:{departure:dt||'미정',product:c.id,qty:String(q)}});
+ }catch(x){ if(x&&x.code!=='USER_CANCEL') e.textContent=x.message||'결제를 진행하지 못했습니다.'; }
+};
+</script>
+</body></html>
