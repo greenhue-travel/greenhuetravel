@@ -426,7 +426,7 @@ section,.strip{scroll-margin-top:64px}
  © 2026 GREEN:休 Greenhue Travel. 사진과 영상의 무단 사용을 금합니다.<br>방문 통계를 위해 구글 애널리틱스를 사용합니다.
 </div></footer>
 <a class="fab" href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">카톡 상담</a>
-<script>(function(){var f=document.querySelector(".fab"),h=document.getElementById("top");if(!f||!h)return;function u(){f.classList.toggle("on",window.scrollY>h.offsetHeight-80)}window.addEventListener("scroll",u,{passive:true});u();})();</script>
+<script>(function(){var f=document.querySelector(".fab"),h=document.getElementById("top");if(!f||!h)return;var c=document.getElementById("contact");function u(){var e=c?c.getBoundingClientRect().top<window.innerHeight-40:false;f.classList.toggle("on",window.scrollY>h.offsetHeight-80&&!e)}window.addEventListener("scroll",u,{passive:true});u();})();</script>
 
 <!-- GH event popup -->
 <style>
