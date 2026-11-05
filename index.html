@@ -141,6 +141,9 @@ section{padding:64px 0}
 .atlas .al dd{margin:0;font-size:14.5px;line-height:1.55;color:var(--iv2);word-break:keep-all}
 .atlas .al dd em{font-style:normal;color:var(--gold);font-weight:700}
 .atlas .al-n{margin:14px 0 0;font-size:14px;color:var(--iv2)}
+.atlas .gu .al{margin-top:10px}
+.atlas .gu .al>div:last-child{border-bottom:0}
+.atlas .gu .al>div{grid-template-columns:84px 1fr}
 .wnet{margin:18px 0 0;font-size:13.5px;line-height:1.8;color:#55625b;word-break:keep-all}
 .wnet span{display:block;font-size:12.5px;font-weight:700;color:#a8853f;letter-spacing:1px;margin-bottom:2px}
 @media(min-width:900px){.wgrid{grid-template-columns:repeat(3,1fr)}}
@@ -408,8 +411,12 @@ section,.strip{scroll-margin-top:64px}
   <div><dt>하노이 · 근교 <b>7</b></dt><dd>BRG 킹스아일랜드 · BRG 레전드힐 · 스카이레이크 · 하노이 골프클럽 · 피닉스 · 탐다오 · 탄란 밸리</dd></div>
   <div><dt>숙소</dt><dd><em>롯데호텔 하노이</em> · 소노벨 하이퐁 · 썬플라워 하이퐁 · FLC 그랜드 하롱베이</dd></div>
   <div><dt>투어</dt><dd>하롱베이 크루즈 · 닌빈 짱안 · 땀꼭 · 하노이 구시가 · 썬월드</dd></div>
-  <div class="gu"><dt>괌 <b>3</b></dt><dd>소노펠리체 CC 망길라오 · 탈로포포 · CCP<br><em>롯데호텔 괌</em> · 웨스틴 괌 · 크라운플라자</dd></div>
  </dl>
+ <div class="gu"><h3>괌도, 그린휴가 압니다</h3><p>소노펠리체 두 코스를 운영하는 소노의 공식 대행으로, 괌 골프를 처음부터 끝까지 맡습니다.</p>
+  <dl class="al">
+   <div><dt>골프장 <b>3</b></dt><dd>소노펠리체 CC 망길라오 · 소노펠리체 CC 탈로포포 · 컨트리클럽 오브 더 퍼시픽</dd></div>
+   <div><dt>숙소</dt><dd><em>롯데호텔 괌</em> · 웨스틴 괌 · 크라운플라자 리조트 괌</dd></div>
+  </dl></div>
  <p class="al-n">주력 호텔은 롯데호텔(하노이 · 괌)입니다. 코스 · 숙소 · 투어는 일행에 맞춰 조합합니다.</p>
 </div></section>
 
@@ -588,7 +595,7 @@ section,.strip{scroll-margin-top:64px}
 (function(){var p=document.getElementById('ghPop');if(!p)return;var k='gh_pop_hide',t=new Date().toISOString().slice(0,10),h=null;
 try{h=localStorage.getItem(k);}catch(e){}
 var shown=false;function show(){if(shown)return;shown=true;if(p.querySelector('.ghp-c'))p.classList.add('on');}
-if(/popup/.test(location.search)){setTimeout(show,800);}else if(h!==t){var ss=false;try{ss=sessionStorage.getItem('gh_pop_seen')==='1';}catch(e){}if(!ss){var fire=function(){window.removeEventListener('scroll',onS);try{sessionStorage.setItem('gh_pop_seen','1');}catch(e){}show();};var onS=function(){if(window.scrollY>window.innerHeight*0.7)fire();};window.addEventListener('scroll',onS,{passive:true});setTimeout(fire,5000);}}
+if(/popup/.test(location.search)){setTimeout(show,800);}else if(h!==t){var ss=false;try{ss=sessionStorage.getItem('gh_pop_seen')==='1';}catch(e){}if(!ss){var fire=function(){window.removeEventListener('scroll',onS);try{sessionStorage.setItem('gh_pop_seen','1');}catch(e){}show();};var onS=function(){if(window.scrollY>window.innerHeight*0.3)fire();};window.addEventListener('scroll',onS,{passive:true});setTimeout(fire,1800);}}
 function close(){p.classList.remove('on');}
 p.addEventListener('click',function(e){var a=e.target.getAttribute&&e.target.getAttribute('data-ghp');if(e.target===p||a==='close'){close();}if(a==='today'){try{localStorage.setItem(k,t);}catch(x){}close();}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
