@@ -85,6 +85,23 @@ section{padding:64px 0}
 .wgrid b{font-family:var(--fs);font-size:15px;color:#a8853f;font-weight:600;letter-spacing:1px}
 .wgrid h3{margin:4px 0 6px;font-size:18px;color:#13261e}
 .wgrid p{margin:0;font-size:15px;line-height:1.65;color:#3d4a43;word-break:keep-all}
+.atlas{background:var(--g2);padding:56px 0}
+.atlas .at-st{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 6px}
+.atlas .at-st div{border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center}
+.atlas .at-st b{display:block;font-family:var(--fs);font-size:26px;color:var(--gold);font-weight:600;line-height:1.15}
+.atlas .at-st span{font-size:13px;color:var(--iv2)}
+.atlas .rg{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.atlas .rg h3{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 10px;font-family:var(--fs);font-weight:600;font-size:19px}
+.atlas .rg h3 small{font-family:var(--fb);font-size:13px;color:var(--gold);font-weight:700}
+.atlas .cp{display:flex;flex-wrap:wrap;gap:7px}
+.atlas .cp span{font-size:14.5px;line-height:1.3;padding:7px 12px;border-radius:30px;background:rgba(244,239,228,.07);border:1px solid var(--line);color:var(--iv)}
+.atlas .cp.st span{background:transparent;color:var(--iv2)}
+.atlas .gu{margin-top:30px;background:rgba(210,178,119,.08);border:1px solid rgba(210,178,119,.35);border-radius:18px;padding:20px 18px}
+.atlas .gu h3{margin:0 0 4px;font-family:var(--fs);font-weight:600;font-size:21px}
+.atlas .gu p{margin:0 0 12px;font-size:15px;color:var(--iv2)}
+.atlas .at-go{margin-top:26px;text-align:center}
+.atlas .at-go p{font-size:15px;color:var(--iv2);margin:0 0 12px}
+@media(min-width:900px){.atlas .rgs{display:grid;grid-template-columns:1fr 1fr;column-gap:36px}}
 .wnet{margin:18px 0 0;font-size:13.5px;line-height:1.8;color:#55625b;word-break:keep-all}
 .wnet span{display:block;font-size:12.5px;font-weight:700;color:#a8853f;letter-spacing:1px;margin-bottom:2px}
 @media(min-width:900px){.wgrid{grid-template-columns:repeat(3,1fr)}}
@@ -327,7 +344,17 @@ section,.strip{scroll-margin-top:64px}
   <div><b>02</b><h3>그린휴 현지팀이 함께</h3><p>공항 미팅, 우리 일행만의 단독 차량, 실크패스 · 킹스아일랜드 · FLC 하롱 같은 외부 명문 코스 티타임까지 현지팀이 직접 챙깁니다.</p></div>
   <div><b>03</b><h3>보증보험 · 사고 대응</h3><p>관광사업 등록 여행사로 영업보증보험에 가입되어 있습니다. 현지에서 사고가 나면 현지팀과 본사가 병원부터 보험 처리까지 함께 맡습니다.</p></div>
  </div>
- <p class="wnet"><span>그린휴가 함께하는 곳</span>소노펠리체 CC 하이퐁 · 소노벨 하이퐁 · PGA 실크패스 · BRG 킹스아일랜드 · FLC 하롱 · 롯데호텔 괌 · 망길라오 · 탈로포포 · 가고시마 사츠마</p>
+</div></section>
+
+<section class="atlas" id="atlas" aria-labelledby="a-h"><div class="wrap">
+ <p class="eb">베트남 북부 · 괌</p><h2 class="t" id="a-h">베트남 북부,<br>그린휴는 서울보다 잘 압니다</h2>
+ <p class="sub">하노이에서 닌빈까지, 명문 골프장 21곳. 그린휴는 이 코스들을 직접 라운드해 보고, 하이퐁 상주 현지팀과 직거래로 맞춥니다.</p>
+ <div class="at-st"><div><b>21</b><span>명문 코스</span></div><div><b>4</b><span>권역</span></div><div><b>직거래</b><span>현지팀과 바로</span></div></div>
+ <div class="rgs"><div class="rg"><h3>하이퐁<small>4곳</small></h3><div class="cp"><span>소노펠리체 CC 하이퐁</span><span>빈펄 골프 하이퐁</span><span>드래곤 골프링크스</span><span>BRG 루비트리</span></div></div><div class="rg"><h3>하롱 · 꽝닌<small>2곳</small></h3><div class="cp"><span>FLC 하롱베이</span><span>PGA 실크패스 동찌우</span></div></div><div class="rg"><h3>하노이 · 근교<small>13곳</small></h3><div class="cp"><span>BRG 킹스아일랜드</span><span>BRG 레전드힐</span><span>스카이레이크</span><span>반트리</span><span>롱비엔</span><span>하노이 골프클럽</span><span>찌린 스타</span><span>피닉스</span><span>힐탑밸리</span><span>탐다오</span><span>헤론레이크</span><span>앰버힐스</span><span>옌중</span></div></div><div class="rg"><h3>닌빈<small>2곳</small></h3><div class="cp"><span>로열 골프클럽</span><span>짱안 골프앤컨트리클럽</span></div></div></div>
+ <div class="rg"><h3>숙소</h3><div class="cp st"><span>롯데호텔 하노이</span><span>소노벨 하이퐁</span><span>썬플라워</span></div></div>
+ <div class="rg"><h3>골프 밖의 하루</h3><div class="cp st"><span>하롱베이 크루즈</span><span>닌빈 짱안 · 땀꼭</span><span>하노이 구시가</span><span>썬월드</span></div></div>
+ <div class="gu"><h3>괌도, 그린휴가 압니다</h3><p>섬의 명문 코스 6곳과 숙소를 일정에 맞춰 엮습니다.</p><div class="cp"><span>소노펠리체 CC 망길라오</span><span>소노펠리체 CC 탈로포포</span><span>레오팔레스</span><span>스타츠 괌</span><span>컨트리클럽 오브 더 퍼시픽</span><span>윈드워드 힐스</span></div><div style="margin-top:10px"><div class="cp st"><span>롯데호텔 괌</span><span>웨스틴 괌</span></div></div></div>
+ <div class="at-go"><p>코스 · 숙소 · 투어는 일행의 실력과 일정에 맞춰 조합합니다.</p><a class="btn btn-k" href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">코스 조합 상담하기</a></div>
 </div></section>
 
 <section class="products" id="products" aria-labelledby="p-h"><div class="wrap">
