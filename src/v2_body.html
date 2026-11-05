@@ -62,6 +62,22 @@ section{padding:64px 0}
 .vq span{display:block;margin-top:10px;font-size:14px;color:#6b766f}
 .vn{font-size:13px;color:#7d867f;margin:6px 0 0}
 /* why */
+/* road · credentials · review swipe */
+.road{list-style:none;margin:22px 0 0;padding:14px 0 0;border-top:1px solid #e3dccb}
+.road li{display:grid;grid-template-columns:52px 1fr;gap:8px;font-size:14.5px;line-height:1.5;color:#33413a;padding:4px 0;word-break:keep-all}
+.road b{font-family:var(--fs);font-weight:600;color:#a8853f}
+.lcred{list-style:none;display:flex;gap:10px;margin:18px 0 0;padding:0}
+.lcred li{flex:1;border:1px solid rgba(210,178,119,.45);border-radius:12px;padding:10px 12px}
+.lcred b{display:block;font-family:var(--fs);font-size:24px;color:var(--gold);font-weight:600;line-height:1.1}
+.lcred span{font-size:13.5px;color:var(--iv2,#d9e3dd)}
+.vsw{display:block;font-weight:700;color:#a8853f;margin-bottom:2px}
+@media(max-width:899px){
+ .vgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin-right:-16px;padding-right:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .vgrid::-webkit-scrollbar{display:none}
+ .vgrid .vq{flex:0 0 82%;scroll-snap-align:start;margin:0}
+}
+@media(min-width:900px){.vsw{display:none}}
+
 .why{background:var(--paper2,#f4efe4);color:var(--ink);padding:44px 0}
 .why h2.t{color:var(--ink)}.why .eb{color:#a8853f}
 .wgrid{display:grid;gap:12px;margin-top:20px}
@@ -247,6 +263,13 @@ section,.strip{scroll-margin-top:64px}
   <div><b>300<small>명+</small></b><span>다시 찾아 주신 고객</span></div>
  </div>
  <div class="badges"><i>소노호텔앤리조트 공식 대행</i><i>소노벨 하이퐁 전략 여행사</i><i>관광사업 등록 제2025-000005호</i></div>
+ <ol class="road" aria-label="그린휴가 걸어온 길">
+  <li><b>2022</b>소노 회원을 위한 해외 골프 서비스를 열다</li>
+  <li><b>2023</b>첫 회원 골프대회 · 하이퐁 80명</li>
+  <li><b>2024</b>소노벨 하이퐁 골프 멤버십 기획 · 운영</li>
+  <li><b>2025</b>그린휴 설립 · 관광사업(여행업) 등록</li>
+  <li><b>2026</b>소노호텔앤리조트 공식 대행 · 회원 대회 9회</li>
+ </ol>
 </div></section>
 
 <section class="events" id="events" aria-labelledby="e-h"><div class="wrap">
@@ -291,7 +314,7 @@ section,.strip{scroll-margin-top:64px}
   <figure class="vq"><p>대표님께서 제 취향을 저격하셨습니다. 다음을 기약해 봅니다.</p><span>박○○ 회원님 · 2026.10 실크패스 · 드래곤</span></figure>
   <figure class="vq"><p>덕분에 좋은 여행 즐겁게 잘했습니다.</p><span>김○○ 님 · 2026.06 괌</span></figure>
  </div>
- <p class="vn">손님이 대표에게 보낸 카카오톡에서 옮겼습니다. 성함은 가렸습니다.</p>
+ <p class="vn"><span class="vsw">옆으로 넘겨 더 보기</span>손님이 대표에게 보낸 카카오톡에서 옮겼습니다. 성함은 가렸습니다.</p>
 </div></section>
 
 <section class="why" aria-labelledby="w-h"><div class="wrap">
@@ -364,6 +387,7 @@ section,.strip{scroll-margin-top:64px}
  <div>
   <p class="eb">인생 후반 설계</p><h2 class="t" id="l-h">90세까지 라운드,<br>그 긴 여정도 함께 설계합니다</h2>
   <p class="sub">오래 치는 분들에게는 이유가 있습니다.<br>건강한 몸, 마르지 않는 여유,<br>그리고 흔들림 없는 준비.</p>
+  <ul class="lcred"><li><b>19년</b><span>보험 한 길</span></li><li><b>10년</b><span>원수사 센터장</span></li></ul>
  </div>
  <div>
   <div class="sc" aria-label="인생의 스코어카드">
