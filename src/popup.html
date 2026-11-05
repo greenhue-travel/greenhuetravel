@@ -35,12 +35,12 @@
  <div class="ghp-box">
   <button class="ghp-x" type="button" aria-label="닫기" data-ghp="close">&times;</button>
   <div class="ghp-top">
-   <span class="ghp-rib">SONO HOTELS &amp; RESORTS 공식 이벤트 · 공식 접수처 <b>GREEN:休</b></span>
+   <span class="ghp-rib">소노호텔앤리조트 공식 이벤트 · 공식 접수처 <b>GREEN:休</b></span>
    <h3>올겨울, 회원님을 위한 골프 축제</h3>
    <p>라운드부터 만찬까지, 즐거움만 챙겨 가세요</p>
   </div>
   <div class="ghp-grid">
-   <div class="ghp-c" data-until="2026-12-03">
+   <div class="ghp-c" data-until="2026-11-27">
     <div class="ghp-ph"><img src="assets/ev-awards-2026.jpg" alt="2026 소노 회원 골프 어워즈 트로피" style="object-fit:contain;background:#0f241b"><span class="ghp-tag v">베트남</span></div>
     <div class="ghp-bd"><small>2026. 12. 3(목) – 7(월) · 3박 5일</small><h4>2026 소노 회원 골프 어워즈<br>소노펠리체 CC 하이퐁</h4>
      <div class="ghp-pr">1,580,000원<span>소노회원가 · 항공 포함</span></div>
@@ -63,7 +63,8 @@
 <script>
 (function(){var p=document.getElementById('ghPop');if(!p)return;var k='gh_pop_hide',t=new Date().toISOString().slice(0,10),h=null;
 try{h=localStorage.getItem(k);}catch(e){}
-if(h!==t||/popup/.test(location.search)){setTimeout(function(){if(p.querySelector('.ghp-c'))p.classList.add('on');},1200);}
+var shown=false;function show(){if(shown)return;shown=true;if(p.querySelector('.ghp-c'))p.classList.add('on');}
+if(/popup/.test(location.search)){setTimeout(show,800);}else if(h!==t){var ss=false;try{ss=sessionStorage.getItem('gh_pop_seen')==='1';}catch(e){}if(!ss){var onS=function(){if(window.scrollY>window.innerHeight*1.8){window.removeEventListener('scroll',onS);try{sessionStorage.setItem('gh_pop_seen','1');}catch(e){}show();}};window.addEventListener('scroll',onS,{passive:true});}}
 function close(){p.classList.remove('on');}
 p.addEventListener('click',function(e){var a=e.target.getAttribute&&e.target.getAttribute('data-ghp');if(e.target===p||a==='close'){close();}if(a==='today'){try{localStorage.setItem(k,t);}catch(x){}close();}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
