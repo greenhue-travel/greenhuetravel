@@ -1,2 +1,5 @@
 /assets/*
   Access-Control-Allow-Origin: *
+/assets/*.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: attachment; filename="seonhye-oh.vcf"
