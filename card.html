@@ -19,106 +19,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
 <style>
-:root{--g:#0f241b;--g2:#15301f;--g3:#1d3d2b;--iv:#f4efe4;--iv2:rgba(244,239,228,.86);--iv3:rgba(244,239,228,.6);--gold:#d2b277;--line:rgba(244,239,228,.14);
+:root{--g:#0f241b;--g2:#15301f;--iv:#f4efe4;--iv2:rgba(244,239,228,.86);--iv3:rgba(244,239,228,.6);--gold:#d2b277;--line:rgba(244,239,228,.14);
 --fs:'Noto Serif KR',Georgia,serif;--fb:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--g);color:var(--iv);font-family:var(--fb);font-size:17px;line-height:1.7}
+body{margin:0;min-height:100vh;background:var(--g);color:var(--iv);font-family:var(--fb);font-size:16px;line-height:1.6;display:flex;align-items:center}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:480px;margin:0 auto;padding:0 16px 40px}
-.photo{position:relative;margin:0 -16px;height:420px;background:#2a2f2c url(assets/ceo.jpg) center 18%/cover no-repeat}
-.photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,36,27,0) 45%,rgba(15,36,27,.85) 82%,var(--g) 100%)}
-.logo{position:absolute;top:18px;left:16px;z-index:2;width:120px;height:auto}
-.id{margin-top:-96px;position:relative;z-index:2}
-.eb{font-size:14px;letter-spacing:.08em;color:var(--gold);margin:0 0 4px}
-h1{font-family:var(--fs);font-weight:700;font-size:40px;line-height:1.2;margin:0}
-h1 small{font-size:20px;font-weight:600;margin-left:8px;color:var(--iv2)}
-.role{margin:8px 0 0;color:var(--iv2);font-size:16px}
+.wrap{width:100%;max-width:440px;margin:0 auto;padding:28px 16px}
+.logo{width:96px;height:auto;display:block;margin-bottom:22px;opacity:.95}
+.top{display:flex;gap:16px;align-items:center}
+.ph{flex:none;width:96px;height:96px;border-radius:50%;background:#2a2f2c url(assets/ceo.jpg) center 12%/cover no-repeat;border:2px solid var(--gold)}
+.eb{font-size:13px;color:var(--gold);margin:0 0 2px;letter-spacing:.02em}
+h1{font-family:var(--fs);font-weight:700;font-size:32px;line-height:1.2;margin:0}
+h1 small{font-size:16px;font-weight:600;margin-left:6px;color:var(--iv2)}
+.sub{margin:4px 0 0;font-size:14px;color:var(--iv3)}
 .cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.btn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:54px;border-radius:12px;font-weight:700;font-size:16px;text-align:center;padding:0 8px}
-.k{background:#fee500;color:#191919}
+.btn{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:12px;font-weight:700;font-size:16px;text-align:center;border:0;font-family:inherit;cursor:pointer;width:100%}
+.k{background:#fee500;color:#191919;grid-column:1/-1}
 .p{background:var(--gold);color:var(--g)}
-.o{border:1px solid var(--line);color:var(--iv)}
-.full{grid-column:1/-1}
-.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px;text-align:center}
-.trust div{border:1px solid var(--line);border-radius:12px;padding:12px 4px}
-.trust b{display:block;font-family:var(--fs);font-size:22px;color:var(--gold);line-height:1.3}
-.trust span{font-size:12.5px;color:var(--iv3);line-height:1.4;display:block}
-h2{font-family:var(--fs);font-size:20px;margin:32px 0 10px}
-.prod{display:grid;gap:10px}
-.prod a{display:block;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--g2)}
-.prod .t{font-weight:700;font-size:17px}
-.prod .s{font-size:14px;color:var(--iv3);margin-top:2px}
-.prod .pr{margin-top:6px;color:var(--gold);font-weight:700}
-.prod .pr small{color:var(--iv3);font-weight:400;font-size:13px;margin-left:4px}
-.prod .ev{border-color:rgba(210,178,119,.5)}
-.prod .tag{display:inline-block;font-size:12px;color:var(--g);background:var(--gold);border-radius:999px;padding:1px 10px;margin-bottom:6px;font-weight:700}
-.msg{margin-top:28px;border-left:2px solid var(--gold);padding:2px 0 2px 14px;color:var(--iv2);font-size:16px}
-.info{margin-top:28px;border-top:1px solid var(--line);padding-top:18px;font-size:15px}
-.info dl{display:grid;grid-template-columns:76px 1fr;gap:8px 10px;margin:0}
-.info dt{color:var(--iv3)}
-.info dd{margin:0;word-break:break-all}
-.info dd a{text-decoration:underline;text-underline-offset:3px}
-.share{margin-top:28px;background:var(--g2);border:1px solid rgba(210,178,119,.45);border-radius:16px;padding:18px}
-.share h3{font-family:var(--fs);font-size:19px;margin:0 0 6px}
-.share p{margin:0 0 12px;color:var(--iv2);font-size:15px}
-.share small{display:block;margin-top:10px;color:var(--iv3);font-size:13px;line-height:1.6}
-.foot{margin-top:24px;font-size:12px;color:var(--iv3);line-height:1.7}
+.o{background:transparent;border:1px solid var(--line);color:var(--iv)}
+.links{display:flex;justify-content:center;gap:18px;margin-top:16px;font-size:14px;color:var(--iv2)}
+.links a{text-decoration:underline;text-underline-offset:3px}
+.foot{margin-top:22px;font-size:11.5px;color:var(--iv3);line-height:1.7;text-align:center}
 </style>
 </head>
 <body>
 <div class="wrap">
-
- <div class="photo" role="img" aria-label="그린휴 대표 오선혜"><img class="logo" src="assets/logo-white.png" alt="GREEN:休"></div>
-
- <div class="id">
-  <p class="eb">베트남 북부 · 괌 프라이빗 골프 전문</p>
-  <h1>오선혜<small>그린휴 대표</small></h1>
-  <p class="role">소노호텔앤리조트 공식 해외 골프 대행<br>설계부터 귀국까지, 우리 일행만의 골프 여행을 직접 챙깁니다.</p>
+ <img class="logo" src="assets/logo-white.png" alt="GREEN:休">
+ <div class="top">
+  <div class="ph" role="img" aria-label="그린휴 대표 오선혜"></div>
+  <div>
+   <p class="eb">베트남 북부 · 괌 프라이빗 골프 전문</p>
+   <h1>오선혜<small>대표</small></h1>
+   <p class="sub">소노호텔앤리조트 공식 해외 골프 대행<br>회원 골프대회 9회 · 고객 2,000명+</p>
+  </div>
  </div>
 
  <div class="cta">
-  <a class="btn k full" href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">카톡으로 상담하기</a>
+  <a class="btn k" href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">카톡으로 상담하기</a>
   <a class="btn p" href="tel:01026135313">전화하기</a>
   <a class="btn o" href="assets/seonhye-oh.vcf" download="seonhye-oh.vcf">연락처 저장</a>
-  <a class="btn o" href="/">홈페이지</a>
-  <a class="btn o" href="https://pf.kakao.com/_nHFmX/friend" target="_blank" rel="noopener">채널 추가</a>
+  <button class="btn o" id="shareBtn" type="button" style="grid-column:1/-1">이 명함 소개하기</button>
  </div>
 
- <div class="trust">
-  <div><b>9회</b><span>소노 회원<br>골프대회 운영</span></div>
-  <div><b>2,000+</b><span>함께한<br>골프 여행 고객</span></div>
-  <div><b>13곳</b><span>베트남 북부<br>명문 코스 직접 라운드</span></div>
- </div>
+ <div class="links"><a href="/">홈페이지 · 상품 보기</a><a href="https://pf.kakao.com/_nHFmX/friend" target="_blank" rel="noopener">채널 추가</a></div>
 
- <h2>지금 상담 많은 상품</h2>
- <div class="prod">
-  <a class="ev" href="/#events"><span class="tag">11월 26일 마감</span><div class="t">2026 소노 회원 골프 어워즈</div><div class="s">12.3(목)–12.7(월) · 소노펠리체 CC 하이퐁 · 소노회원 50명</div><div class="pr">1,580,000원<small>1인 · 항공 포함 · 소노회원가</small></div></a>
-  <a href="/#p-hp"><div class="t">하이퐁 소노펠리체 3박 5일</div><div class="s">창을 열면 페어웨이, 우리 일행만의 단독 차량</div><div class="pr">580,000원~<small>1인 지상비 · 2인 1실 기준 · 항공 별도</small></div></a>
-  <a href="/#p-gu"><div class="t">괌 망길라오 · 탈로포포 3박 5일</div><div class="s">비행 4시간 · 해안 절벽 코스와 내륙 코스</div><div class="pr">$680~<small>약 99만 원 · 1인 지상비 · 2인 1실 기준</small></div></a>
- </div>
-
- <p class="msg">날짜와 인원만 보내 주세요. 포함 · 불포함까지 한 장에 담은 1:1 견적서로 답해 드립니다.</p>
-
-
- <div class="share">
-  <h3>골프 좋아하는 분께 소개해 주세요</h3>
-  <p>아래 버튼을 누르면 이 명함이 카카오톡으로 바로 전달됩니다.</p>
-  <button class="btn p" id="shareBtn" type="button" style="width:100%;border:0;font:inherit;font-weight:700;cursor:pointer">이 명함 소개하기</button>
-  <small>소개로 베트남 개별 여행을 신청하신 분 본인 1인께 프리미엄 마사지 90분(팁 포함)을 1회 준비해 드립니다. 동반 일행과 소노 회원 행사는 제외됩니다. 상담 때 소개해 주신 분 성함을 알려 주세요.</small>
- </div>
- <div class="info">
-  <dl>
-   <dt>휴대폰</dt><dd><a href="tel:01026135313">010-2613-5313</a></dd>
-   <dt>대표전화</dt><dd><a href="tel:050371550662">0503-7155-0662</a></dd>
-   <dt>이메일</dt><dd><a href="mailto:contact@greenhuetravel.com">contact@greenhuetravel.com</a></dd>
-   <dt>홈페이지</dt><dd><a href="/">greenhuetravel.com</a></dd>
-   <dt>카톡 채널</dt><dd><a href="https://pf.kakao.com/_nHFmX" target="_blank" rel="noopener">그린휴골프여행</a></dd>
-   <dt>사무실</dt><dd>서울특별시 관악구 관악로 168, 4층 (방문 상담은 사전 예약제)</dd>
-  </dl>
- </div>
-
- <p class="foot">GREEN:休 그린휴 · 대표 오선혜 · 사업자등록번호 822-16-02715 · 관광사업 등록 여행업 제2025-000005호</p>
+ <p class="foot">010-2613-5313 · 대표전화 0503-7155-0662<br>contact@greenhuetravel.com · greenhuetravel.com<br>그린휴 · 여행업 제2025-000005호 · 사업자 822-16-02715</p>
 </div>
 <script>
 (function(){
@@ -126,7 +72,7 @@ h2{font-family:var(--fs);font-size:20px;margin:32px 0 10px}
  b.addEventListener('click',function(){
   if(navigator.share){navigator.share({title:'오선혜 · 그린휴 대표',text:txt,url:url}).catch(function(){});return;}
   var t=txt+' '+url;
-  function ok(){b.textContent='주소를 복사했습니다. 카톡에 붙여 넣어 보내 주세요';setTimeout(function(){b.textContent='이 명함 소개하기'},3000)}
+  function ok(){b.textContent='복사했습니다. 카톡에 붙여 넣어 보내 주세요';setTimeout(function(){b.textContent='이 명함 소개하기'},3000)}
   try{navigator.clipboard.writeText(t).then(ok,function(){prompt('아래 주소를 복사해 보내 주세요',t)})}catch(e){prompt('아래 주소를 복사해 보내 주세요',t)}
  });
 })();
