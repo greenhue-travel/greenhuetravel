@@ -85,6 +85,13 @@ h2{font-family:var(--fs);font-size:27px;line-height:1.35;color:var(--ink);margin
 .course .vin{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#173426,#0b1c14);border:1px solid rgba(201,169,106,.35)}
 .course .vin b{font-family:var(--fs);font-size:34px;letter-spacing:6px;color:var(--gold);font-weight:600}
 .course .vin small{font-size:13px;letter-spacing:3px;color:var(--iv2);margin-top:10px}
+.stk{position:relative;padding-bottom:20%;margin:34px 4px 0}
+.stk .m{position:relative;transform:rotate(var(--r1));border:6px solid #f4efe4;box-shadow:0 14px 30px rgba(0,0,0,.42)}
+.stk img{width:100%;display:block;object-fit:cover}
+.stk .m .day{position:absolute;left:0;top:0;z-index:1;background:var(--gold);color:var(--dk);font-weight:700;font-size:14px;padding:6px 12px}
+.stk .o{position:absolute;left:-6px;bottom:0;width:56%;transform:rotate(var(--r2));border:5px solid #fff;box-shadow:0 18px 36px rgba(0,0,0,.5);z-index:2}
+.yt .stk{margin-top:26px}.yt .stk .m{box-shadow:0 12px 26px rgba(0,0,0,.22)}.yt .stk .o{box-shadow:0 14px 28px rgba(0,0,0,.28)}
+body{overflow-x:hidden}
 .course h3{font-family:var(--fs);font-size:23px;margin-top:16px;font-weight:600}
 .course .by{font-size:13.5px;color:var(--gold);font-weight:700;margin-top:4px}
 .course p{color:var(--iv2);font-size:15.5px;margin-top:8px}
@@ -96,6 +103,9 @@ h2{font-family:var(--fs);font-size:27px;line-height:1.35;color:var(--ink);margin
 .facts b{color:var(--g)}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.gal figure{position:relative;margin:0}.gal img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:100% 100%}.gal figcaption{position:absolute;left:0;top:0;background:rgba(15,36,27,.85);color:var(--gold);font-size:12.5px;font-weight:700;padding:3px 9px}
 .faq details{border-bottom:1px solid var(--line)}.faq summary{cursor:pointer;list-style:none;padding:13px 26px 13px 0;font-weight:700;color:var(--ink);font-size:16px;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";position:absolute;right:4px;top:10px;color:var(--gold2);font-size:20px;font-weight:400}.faq details[open] summary:after{content:"−"}.faq p{font-size:15px;color:var(--mute);padding:0 0 14px}
+.swh{margin-top:34px;font-weight:700;color:var(--ink);font-size:15px;display:flex;justify-content:space-between}.swh span{font-weight:400;color:var(--mute);font-size:13.5px}
+.sw{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:10px -22px 0;padding:6px 22px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.sw::-webkit-scrollbar{display:none}
+.sw figure{flex:0 0 72%;max-width:340px;scroll-snap-align:start;margin:0;background:#fff;padding:6px 6px 0;box-shadow:0 8px 20px rgba(0,0,0,.12)}.sw img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:100% 100%;display:block}.sw figcaption{font-size:14px;font-weight:700;color:var(--ink);padding:9px 4px 10px}
 .stay .ph{aspect-ratio:3/2;overflow:hidden;margin-top:22px}.stay .ph img{width:100%;height:100%;object-fit:cover}
 .tl div{display:grid;grid-template-columns:76px 1fr;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
 .tl div b{color:var(--ink)}.tl strong{color:var(--g)}
@@ -151,23 +161,20 @@ footer a{text-decoration:underline}
  <h2>3색 골프<br>섬 · 산 · 바다</h2>
  <p class="lead">매일 다른 코스, 다른 풍경입니다. 클럽 중식 후 여유 있게 티오프합니다.</p>
  <article class="course">
-  <div class="ph" style="aspect-ratio:700/393"><span class="day">12.3 목</span><img loading="lazy" src="assets/hp2-vin.jpg" alt="빈펄 골프 하이퐁, 물가의 그린"></div>
-  <div class="more" style="grid-template-columns:1fr"><img loading="lazy" src="assets/hp2-vin2.jpg" alt="빈펄 골프 하이퐁 페어웨이와 카트" style="aspect-ratio:3/2"></div>
+  <div class="stk" style="--r1:-1.5deg;--r2:3.5deg"><div class="m"><span class="day">12.3 목</span><img loading="lazy" src="assets/hp2-vin.jpg" alt="빈펄 골프 하이퐁, 물가의 그린" style="aspect-ratio:700/393;object-position:50% 50%"></div><div class="o"><img loading="lazy" src="assets/hp2-vin2.jpg" alt="빈펄 골프 하이퐁 페어웨이와 카트" style="aspect-ratio:3/2;object-position:50% 100%"></div></div>
   <h3>빈펄 골프 하이퐁</h3>
   <p class="by">36홀 챔피언십 코스 · 강 위의 섬 부옌</p>
   <p>하이퐁 시내에서 가까운 섬 위의 코스. 강과 숲에 둘러싸여 도착일 첫 라운드를 편안하게 엽니다.</p>
  </article>
  <article class="course">
-  <div class="ph"><span class="day">12.4 금</span><img loading="lazy" src="assets/hp2-silk.jpg" alt="PGA 실크패스 동찌에우, 산과 호수"></div>
-  <div class="more"><img loading="lazy" src="assets/hp2-silk2.jpg" alt="실크패스 소나무 숲길" style="object-position:50% 100%"><img loading="lazy" src="assets/hp-silk-club.jpg" alt="실크패스 클럽하우스" style="object-position:50% 45%"></div>
+  <div class="stk" style="--r1:1.2deg;--r2:-3deg"><div class="m"><span class="day">12.4 금</span><img loading="lazy" src="assets/hp3-silk.jpg" alt="PGA 실크패스 동찌에우, 산과 호수" style="aspect-ratio:4/3;object-position:50% 50%"></div><div class="o"><img loading="lazy" src="assets/hp3-silk2.jpg" alt="실크패스 소나무 숲길" style="aspect-ratio:1/1;object-position:50% 100%"></div></div>
   <h3>PGA 실크패스 동찌에우</h3>
   <p class="by">닉 팔도 설계 · 메이저 6승의 코스</p>
   <p>산자락의 소나무 숲과 호수를 끼고 도는 북부의 명문. 이날은 롱기스트와 니어리스트를 겨룹니다.</p>
   <span class="chip">롱기스트 · 니어리스트</span>
  </article>
  <article class="course">
-  <div class="ph" style="aspect-ratio:4/5"><span class="day">12.6 일</span><img loading="lazy" src="assets/hp2-dragon.jpg" alt="드래곤 골프 링크스, 바다를 낀 코스 항공 사진" style="object-position:50% 100%"></div>
-  <div class="more" style="grid-template-columns:1fr"><img loading="lazy" src="assets/hp2-dragon2.jpg" alt="드래곤 골프 링크스 노을과 돌다리" style="aspect-ratio:3/2"></div>
+  <div class="stk" style="--r1:-1.2deg;--r2:3deg"><div class="m"><span class="day">12.6 일</span><img loading="lazy" src="assets/hp2-dragon.jpg" alt="드래곤 골프 링크스, 바다를 낀 코스 항공 사진" style="aspect-ratio:4/5;object-position:50% 100%"></div><div class="o"><img loading="lazy" src="assets/hp2-dragon2.jpg" alt="드래곤 골프 링크스 노을과 돌다리" style="aspect-ratio:3/2;object-position:50% 100%"></div></div>
   <h3>드래곤 골프 링크스</h3>
   <p class="by">그렉 노먼 설계 · 도썬 해안 링크스</p>
   <p>통킹만 바다를 따라 도는 링크스. 바닷바람 속에서 이번 여행의 마지막 라운드를 마칩니다.</p>
@@ -178,8 +185,7 @@ footer a{text-decoration:underline}
  <p class="eb">12.5 SAT · YEN TU</p>
  <h2>2027년, 새해 소망을 비는 산</h2>
  <p class="lead">옌뜨산은 쩐년똥 황제가 왕위를 내려놓고 수행한 곳이자, 베트남 불교 쭉럼선종이 시작된 성지입니다. 2025년 유네스코 세계문화유산에 이름을 올렸습니다.</p>
- <div class="ph"><img loading="lazy" src="assets/hp2-yentu.jpg" alt="옌뜨산 정상 동탑과 운해"></div>
- <div class="two" style="grid-template-columns:1fr"><img loading="lazy" src="assets/hp2-yentu2.jpg" alt="옌뜨산 케이블카" style="aspect-ratio:3/2"></div>
+  <div class="stk" style="--r1:1.2deg;--r2:-3deg"><div class="m"><img loading="lazy" src="assets/hp2-yentu.jpg" alt="옌뜨산 정상 동탑과 운해" style="aspect-ratio:3/2;object-position:50% 50%"></div><div class="o"><img loading="lazy" src="assets/hp2-yentu2.jpg" alt="옌뜨산 케이블카" style="aspect-ratio:3/2;object-position:50% 100%"></div></div>
  <div class="facts">
   <div><b>오르는 길</b><span>케이블카로 숲을 지나 정상 동탑까지 오릅니다</span></div>
   <div><b>정상</b><span>해발 1,068m, 구름 위의 동탑(동 사원)</span></div>
@@ -192,19 +198,19 @@ footer a{text-decoration:underline}
  <p class="eb">STAY</p>
  <h2>반까오 거리,<br>썬플라워 하이퐁 3박</h2>
  <p class="lead">하이퐁의 중심 반까오 거리. 라운드를 마치면 걸어서 마사지, 하이퐁 명물 게살 쌀국수(반다꾸어)를 내는 로컬 식당, 연유 커피 한 잔의 카페로 갑니다.</p>
- <div class="ph" style="aspect-ratio:871/603"><img loading="lazy" src="assets/hp2-sf-day.jpg" alt="썬플라워 하이퐁 호텔 외관"></div>
- <div class="gal">
-  <figure><img loading="lazy" src="assets/hp2-sf-night.jpg" alt="썬플라워 하이퐁 호텔 야경"><figcaption>호텔 야경</figcaption></figure>
-  <figure><img loading="lazy" src="assets/hp2-sf-lobby.jpg" alt="썬플라워 하이퐁 로비"><figcaption>로비</figcaption></figure>
+ <div class="stk" style="--r1:-1.2deg;--r2:3deg"><div class="m"><img loading="lazy" src="assets/hp2-sf-day.jpg" alt="썬플라워 하이퐁 호텔 외관" style="aspect-ratio:871/603"></div><div class="o"><img loading="lazy" src="assets/hp2-sf-night.jpg" alt="썬플라워 하이퐁 호텔 야경" style="aspect-ratio:874/583"></div></div>
+ <p class="swh">호텔 안 둘러보기 <span>옆으로 넘겨 보세요 ›</span></p>
+ <div class="sw">
   <figure><img loading="lazy" src="assets/hp2-breakfast.jpg" alt="썬플라워 하이퐁 조식 뷔페"><figcaption>조식 뷔페</figcaption></figure>
   <figure><img loading="lazy" src="assets/hp2-sf-golf.jpg" alt="썬플라워 하이퐁 실내 골프 연습장"><figcaption>실내 골프 연습장</figcaption></figure>
-  <figure><img loading="lazy" src="assets/hp2-sf-jacuzzi.jpg" alt="썬플라워 하이퐁 자쿠지"><figcaption>자쿠지</figcaption></figure>
+  <figure><img loading="lazy" src="assets/hp2-sf-jacuzzi.jpg" alt="썬플라워 하이퐁 사우나 · 온탕"><figcaption>사우나 · 온탕</figcaption></figure>
+  <figure><img loading="lazy" src="assets/hp2-sf-lobby.jpg" alt="썬플라워 하이퐁 로비"><figcaption>로비</figcaption></figure>
   <figure><img loading="lazy" src="assets/hp2-sf-gym.jpg" alt="썬플라워 하이퐁 피트니스"><figcaption>피트니스</figcaption></figure>
-  <figure style="grid-column:1/-1"><img style="aspect-ratio:2/1" loading="lazy" src="assets/hp2-sunflower-gate.jpg" alt="썬플라워 하이퐁 썬플라워 정문"><figcaption>썬플라워 정문</figcaption></figure>
+  <figure><img loading="lazy" src="assets/hp2-sunflower-gate.jpg" alt="썬플라워 하이퐁 썬플라워 정문"><figcaption>썬플라워 정문</figcaption></figure>
  </div>
  <div class="facts" style="margin-top:18px">
   <div><b>객실</b><span>2인 1실 · 매일 조식 뷔페</span></div>
-  <div><b>호텔 시설</b><span>실내 골프 연습장 · 자쿠지 · 피트니스</span></div>
+  <div><b>호텔 시설</b><span>실내 골프 연습장 · 사우나 · 온탕 · 피트니스</span></div>
   <div><b>주변</b><span>반까오 거리 · 걸어서 마사지 · 로컬 식당 · 카페</span></div>
  </div>
  <h4 style="margin-top:30px">숙소, 자주 묻는 질문</h4>
