@@ -34,86 +34,162 @@ if(ev)gtag('event',ev,{page:pg,link_text:t,transport_type:'beacon'});},true);})(
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
 <style>
-:root{--ink:#13261e;--g:#1d5a45;--gold:#8a6a2a;--paper:#fbfaf6;--line:#e2ded2;--mute:#56635c;--fs:'Noto Serif KR',Georgia,serif;--fb:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}
+:root{--ink:#13261e;--dk:#0f241b;--g:#1d5a45;--gold:#c9a96a;--gold2:#8a6a2a;--paper:#fbfaf6;--line:#e2ded2;--mute:#56635c;--iv:#f4efe4;--iv2:rgba(244,239,228,.78);--fs:'Noto Serif KR',Georgia,serif;--fb:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:#2e3b34;font-family:var(--fb);font-size:17px;line-height:1.6;word-break:keep-all}
+body{background:var(--paper);color:#2e3b34;font-family:var(--fb);font-size:17px;line-height:1.65;word-break:keep-all}
 a{color:inherit}
-.wrap{max-width:640px;margin:0 auto;padding:0 20px}
-.hero{position:relative;height:62vh;min-height:360px;max-height:560px;overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 35%,rgba(251,250,246,0) 70%,var(--paper) 100%)}
-.hero .top{position:absolute;left:20px;right:20px;top:18px;z-index:2;display:flex;justify-content:space-between;align-items:center}
-.hero .top a img{height:24px;width:auto;filter:brightness(0) invert(1)}
-.hero .top span{color:#fff;font-size:13px;font-weight:700;border:1px solid rgba(255,255,255,.7);padding:4px 10px}
-.kick{color:var(--gold);font-weight:700;font-size:15px}
-h1{font-family:var(--fs);font-size:32px;line-height:1.3;color:var(--ink);margin-top:6px}
-.lead{color:var(--mute);margin-top:10px}
-.note{margin-top:18px;border-left:3px solid var(--gold);background:#f2ede0;padding:12px 14px;font-size:15px;color:#4a4233}
-.keys{display:grid;grid-template-columns:1fr 1fr;margin-top:22px;border-top:2px solid var(--ink)}
-.keys div{padding:12px 0;border-bottom:1px solid var(--line)}
-.keys div:nth-child(2n){padding-left:14px;border-left:1px solid var(--line)}
-.keys small{display:block;font-size:13px;color:var(--gold);font-weight:700}
-.keys b{display:block;font-size:17px;color:var(--ink)}
-.keys .pz b{font-family:var(--fs);font-size:22px}
-h2{font-family:var(--fs);font-size:23px;color:var(--ink);margin:40px 0 12px}
-.day{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:62px 1fr;gap:6px}
-.day .dt{font-family:var(--fs);font-size:20px;color:var(--ink);line-height:1.3}
-.day .dt small{display:block;font-family:var(--fb);font-size:13px;color:var(--gold);font-weight:700}
-.day b{font-family:var(--fs);font-size:19px;color:var(--ink)}
-.day em{font-style:normal;display:inline-block;font-size:12.5px;color:#fff;background:var(--g);padding:1px 7px;margin-left:6px;vertical-align:2px}
-.day p{font-size:15px;color:var(--mute)}
-.day.yt b{color:var(--g)}
-.ph{margin-top:14px;border-radius:2px;overflow:hidden}.ph img{width:100%;display:block}
-.cap{font-size:13px;color:var(--mute);margin-top:6px}
-.tl div{display:grid;grid-template-columns:72px 1fr;padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.wrap{max-width:680px;margin:0 auto;padding:0 22px}
+img{display:block;max-width:100%}
+/* hero */
+.hero{position:relative;min-height:92vh;max-height:860px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--dk)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,36,27,.55) 0%,rgba(15,36,27,.05) 30%,rgba(15,36,27,.55) 62%,rgba(15,36,27,.97) 100%)}
+.hero .bar{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:18px 22px}
+.hero .bar img{height:24px;width:auto}
+.hero .bar a.h{font-size:13.5px;color:var(--iv2);text-decoration:none}
+.hero .in{position:relative;z-index:2;padding:0 22px 34px;max-width:680px;margin:0 auto;width:100%}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:13.5px;font-weight:700;letter-spacing:.5px;padding:4px 12px}
+.hero h1{font-family:var(--fs);font-size:36px;line-height:1.28;margin-top:16px;font-weight:600}
+.hero .sub{color:var(--iv2);margin-top:12px;font-size:16.5px}
+.hero .fx{display:flex;gap:22px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(201,169,106,.4)}
+.hero .fx small{display:block;font-size:12.5px;color:var(--gold);font-weight:700}
+.hero .fx b{display:block;font-size:17px}
+.hero .fx b.p{font-family:var(--fs);font-size:22px}
+.btn{display:block;text-align:center;padding:16px;font-weight:700;font-size:17px;text-decoration:none;border-radius:2px}
+.btn-k{background:#fee500;color:#191919}
+.btn-g{background:var(--gold);color:var(--dk)}
+.btn-t{border:1.5px solid var(--ink);color:var(--ink)}
+.hero .btn{margin-top:22px}
+.note{background:var(--dk);color:var(--iv2);font-size:14.5px;padding:0 22px 26px}
+.note p{max-width:636px;margin:0 auto;border-left:2px solid var(--gold);padding:4px 0 4px 14px}
+.note b{color:var(--iv)}
+/* sections */
+.sec{padding:52px 0}
+.eb{font-size:13px;letter-spacing:2px;color:var(--gold2);font-weight:700}
+h2{font-family:var(--fs);font-size:27px;line-height:1.35;color:var(--ink);margin-top:6px;font-weight:600}
+.lead{color:var(--mute);margin-top:12px}
+.why{display:grid;gap:14px;margin-top:24px}
+.why>div{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line)}
+.why>div>i{font-style:normal;font-family:var(--fs);font-size:26px;color:var(--gold2);line-height:1}
+.why b{display:block;color:var(--ink);font-size:17.5px}
+.why p{font-size:15px;color:var(--mute);margin-top:2px}
+.dark{background:var(--dk);color:var(--iv)}
+.dark h2{color:var(--iv)}.dark .lead{color:var(--iv2)}.dark .eb{color:var(--gold)}
+.course{margin-top:34px}
+.course .ph{position:relative;aspect-ratio:3/2;overflow:hidden;background:#173426}
+.course .ph img{width:100%;height:100%;object-fit:cover}
+.course .ph .day{position:absolute;left:0;top:0;background:var(--gold);color:var(--dk);font-weight:700;font-size:14px;padding:6px 12px}
+.course .vin{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#173426,#0b1c14);border:1px solid rgba(201,169,106,.35)}
+.course .vin b{font-family:var(--fs);font-size:34px;letter-spacing:6px;color:var(--gold);font-weight:600}
+.course .vin small{font-size:13px;letter-spacing:3px;color:var(--iv2);margin-top:10px}
+.course h3{font-family:var(--fs);font-size:23px;margin-top:16px;font-weight:600}
+.course .by{font-size:13.5px;color:var(--gold);font-weight:700;margin-top:4px}
+.course p{color:var(--iv2);font-size:15.5px;margin-top:8px}
+.course .chip{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;padding:3px 10px;margin-top:10px}
+.yt .ph{aspect-ratio:16/10;overflow:hidden;margin-top:26px}.yt .ph img{width:100%;height:100%;object-fit:cover}
+.yt .two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.yt .two img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.facts{margin-top:22px;border-top:2px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:96px 1fr;padding:12px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.facts b{color:var(--g)}
+.stay .ph{aspect-ratio:3/2;overflow:hidden;margin-top:22px}.stay .ph img{width:100%;height:100%;object-fit:cover}
+.tl div{display:grid;grid-template-columns:76px 1fr;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
 .tl div b{color:var(--ink)}.tl strong{color:var(--g)}
+.tl{margin-top:18px;border-top:2px solid var(--ink)}
+h4{font-size:16px;color:var(--g);margin-top:22px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
+h4.x{color:var(--mute)}
 ul.l{list-style:none}ul.l li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}ul.l li b{color:var(--ink)}
-h3{font-size:16px;color:var(--g);margin-top:18px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
-h3.x{color:var(--mute)}
-.price{margin-top:40px;background:var(--ink);color:#fff;padding:22px 20px}
-.price small{color:#e3cd8f;font-weight:700;font-size:13px}
-.price .n{font-family:var(--fs);font-size:38px;line-height:1.2;margin-top:2px}
-.price .n span{font-family:var(--fb);font-size:16px;color:#c6d2cb}
-.price p{font-size:15px;color:#dfe7e1;margin-top:10px;line-height:1.8}
-.price p em{font-style:normal;color:#e3cd8f;font-weight:700}
+.price{background:var(--dk);color:#fff;padding:26px 22px;margin-top:8px}
+.price small{color:var(--gold);font-weight:700;font-size:13px}
+.price .n{font-family:var(--fs);font-size:42px;line-height:1.2;margin-top:4px}
+.price .n span{font-family:var(--fb);font-size:16px;color:var(--iv2)}
+.price p{font-size:15px;color:var(--iv2);margin-top:12px;line-height:1.85}
+.price p em{font-style:normal;color:var(--gold);font-weight:700}
 .how{margin-top:16px;font-size:15.5px}.how b{color:var(--g)}
 .btns{display:grid;gap:10px;margin-top:20px}
-.btn{display:block;text-align:center;padding:16px;font-weight:700;font-size:17px;text-decoration:none;border-radius:2px}
-.btn-k{background:#fee500;color:#191919}.btn-t{border:1.5px solid var(--ink);color:var(--ink)}
 .fine{font-size:13.5px;color:var(--mute);margin-top:14px;line-height:1.7}
-.host{display:grid;grid-template-columns:88px 1fr;gap:16px;align-items:center;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
-.host img{width:88px;height:108px;object-fit:cover;object-position:50% 20%}
-.host small{color:var(--gold);font-weight:700;font-size:13px}.host b{display:block;font-family:var(--fs);font-size:19px;color:var(--ink);line-height:1.4;margin-top:2px}.host p{font-size:14.5px;color:var(--mute);margin-top:4px}
+.host{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center;margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+.host img{width:96px;height:118px;object-fit:cover;object-position:50% 20%}
+.host small{color:var(--gold2);font-weight:700;font-size:13px}.host b{display:block;font-family:var(--fs);font-size:20px;color:var(--ink);line-height:1.4;margin-top:2px}.host p{font-size:14.5px;color:var(--mute);margin-top:4px}
 .imgs{margin-top:28px;font-size:15px}.imgs a{color:var(--g);font-weight:700}
-footer{margin-top:48px;padding:28px 0 90px;background:var(--ink);color:rgba(244,239,228,.7);font-size:13.5px;line-height:1.8}
-footer img{height:20px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1)}
+footer{margin-top:52px;padding:30px 0 96px;background:var(--dk);color:rgba(244,239,228,.7);font-size:13.5px;line-height:1.8}
+footer img{height:20px;width:auto;margin-bottom:8px}
 footer a{text-decoration:underline}
 .fab{position:fixed;right:16px;bottom:16px;background:#fee500;color:#191919;font-weight:700;padding:13px 18px;border-radius:30px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:9}
+@media(min-width:720px){.hero h1{font-size:46px}h2{font-size:32px}}
 </style>
 </head>
 <body>
-<div class="hero"><img src="assets/hp-silkpath.jpg" alt="PGA 실크패스 동찌에우 코스와 호수"><div class="top"><a href="/" aria-label="그린휴 홈"><img src="assets/logo-white.png" alt="GREEN:休"></a><span>그린휴 단독 기획</span></div></div>
-<main class="wrap">
- <p class="kick">대회 없는 3색 골프 + 옌뜨 · 3박 5일</p>
- <h1>한 해를 마무리하는<br>가장 멋진 방법</h1>
- <p class="lead">북베트남의 명문 세 코스를 돌고, 옌뜨산에 올라 2027년을 빕니다.</p>
- <p class="note">이 여행은 <b>그린휴가 직접 기획한 단독 여행</b>입니다. 같은 기간의 소노 회원 골프 어워즈(대회)와는 별개의 상품입니다.</p>
- <div class="keys">
-  <div><small>일정</small><b>12. 3 목 – 12. 7 월</b></div>
-  <div><small>숙소</small><b>썬플라워 하이퐁 3박</b></div>
-  <div><small>인원</small><b>최소 20 · 최대 30명</b></div>
-  <div class="pz"><small>1인 · 항공 포함</small><b>1,680,000원</b></div>
+<header class="hero"><img src="assets/hp-silkpath.jpg" alt="PGA 실크패스 동찌에우 코스와 호수">
+ <div class="bar"><a href="/" aria-label="그린휴 홈"><img src="assets/logo-white.png" alt="GREEN:休"></a><a class="h" href="/">그린휴 홈페이지 ›</a></div>
+ <div class="in">
+  <span class="tag">그린휴 단독 기획 · 대회 없는 3색 골프 + 옌뜨</span>
+  <h1>한 해를 마무리하는<br>가장 멋진 방법</h1>
+  <p class="sub">북베트남의 명문 세 코스를 돌고,<br>세계문화유산 옌뜨산에 올라 2027년을 빕니다.</p>
+  <div class="fx"><div><small>일정</small><b>12. 3 목 – 12. 7 월</b></div><div><small>1인 · 항공 포함</small><b class="p">1,680,000원</b></div></div>
+  <a class="btn btn-g" href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">카톡으로 문의 · 예약</a>
  </div>
+</header>
+<div class="note"><p>이 여행은 <b>그린휴가 직접 기획한 단독 여행</b>입니다. 같은 기간의 소노 회원 골프 어워즈(대회)와는 별개의 상품입니다.</p></div>
 
- <h2>세 코스와 옌뜨산</h2>
- <div class="day"><div class="dt">12.3<small>목</small></div><div><b>빈펄 골프 하이퐁</b><p>강 위의 섬 부옌, 물과 숲 사이의 챔피언십 코스</p></div></div>
- <div class="day"><div class="dt">12.4<small>금</small></div><div><b>PGA 실크패스 동찌에우</b><em>롱기스트 · 니어리스트</em><p>닉 팔도 설계, 산자락의 소나무 숲과 호수</p></div></div>
- <div class="day yt"><div class="dt">12.5<small>토</small></div><div><b>옌뜨산 · 새해 소망 기도</b><p>케이블카로 오르는 베트남 불교의 성지, 저녁은 함께 시상</p></div></div>
- <div class="day"><div class="dt">12.6<small>일</small></div><div><b>드래곤 골프 링크스</b><p>도썬, 바다를 따라 도는 그렉 노먼 설계 링크스</p></div></div>
- <div class="ph"><img loading="lazy" src="assets/hp-yentu.jpg" alt="옌뜨산 케이블카"></div><p class="cap">옌뜨산 케이블카</p>
- <div class="ph"><img loading="lazy" src="assets/hp-sunflower.jpg" alt="썬플라워 하이퐁 호텔 야경"></div><p class="cap">썬플라워 하이퐁 · 반까오 거리, 걸어서 마사지와 로컬 식당</p>
+<section class="sec"><div class="wrap">
+ <p class="eb">WHY THIS TRIP</p>
+ <h2>순위 대신, 좋은 코스와<br>좋은 저녁으로 채운 3박 5일</h2>
+ <div class="why">
+  <div><i>3</i><div><b>세 명문 코스, 세 가지 풍경</b><p>섬과 강의 빈펄, 산자락 소나무 숲의 실크패스, 바다를 따라 도는 드래곤</p></div></div>
+  <div><i>1</i><div><b>세계문화유산 옌뜨산</b><p>2025년 유네스코 세계유산. 케이블카로 올라 새해 소망을 빕니다</p></div></div>
+  <div><i>3</i><div><b>반까오 거리에서 보내는 세 밤</b><p>라운드 후 걸어서 마사지, 로컬 식당, 카페까지</p></div></div>
+ </div>
+</div></section>
 
+<section class="sec dark"><div class="wrap">
+ <p class="eb">THREE COURSES</p>
+ <h2>3색 골프<br>섬 · 산 · 바다</h2>
+ <p class="lead">매일 다른 코스, 다른 풍경입니다. 클럽 중식 후 여유 있게 티오프합니다.</p>
+ <article class="course">
+  <div class="ph vin"><span class="day">12.3 목</span><b>VINPEARL</b><small>VU YEN ISLAND · HAI PHONG</small></div>
+  <h3>빈펄 골프 하이퐁</h3>
+  <p class="by">36홀 챔피언십 코스 · 강 위의 섬 부옌</p>
+  <p>하이퐁 시내에서 가까운 섬 위의 코스. 강과 숲에 둘러싸여 도착일 첫 라운드를 편안하게 엽니다.</p>
+ </article>
+ <article class="course">
+  <div class="ph"><span class="day">12.4 금</span><img loading="lazy" src="assets/hp-silk-club.jpg" alt="PGA 실크패스 동찌에우 클럽하우스" style="object-position:50% 45%"></div>
+  <h3>PGA 실크패스 동찌에우</h3>
+  <p class="by">닉 팔도 설계 · 메이저 6승의 코스</p>
+  <p>산자락의 소나무 숲과 호수를 끼고 도는 북부의 명문. 이날은 롱기스트와 니어리스트를 겨룹니다.</p>
+  <span class="chip">롱기스트 · 니어리스트</span>
+ </article>
+ <article class="course">
+  <div class="ph"><span class="day">12.6 일</span><img loading="lazy" src="assets/hp-dragon.jpg" alt="드래곤 골프 링크스 바다 옆 페어웨이"></div>
+  <h3>드래곤 골프 링크스</h3>
+  <p class="by">그렉 노먼 설계 · 도썬 해안 링크스</p>
+  <p>통킹만 바다를 따라 도는 링크스. 바닷바람 속에서 이번 여행의 마지막 라운드를 마칩니다.</p>
+ </article>
+</div></section>
+
+<section class="sec yt"><div class="wrap">
+ <p class="eb">12.5 SAT · YEN TU</p>
+ <h2>2027년, 새해 소망을 비는 산</h2>
+ <p class="lead">옌뜨산은 쩐년똥 황제가 왕위를 내려놓고 수행한 곳이자, 베트남 불교 쭉럼선종이 시작된 성지입니다. 2025년 유네스코 세계문화유산에 이름을 올렸습니다.</p>
+ <div class="ph"><img loading="lazy" src="assets/hp-yentu-forest.jpg" alt="옌뜨산 숲과 사원"></div>
+ <div class="two" style="grid-template-columns:1fr"><img loading="lazy" src="assets/hp-yentu.jpg" alt="옌뜨산 케이블카" style="aspect-ratio:16/9"></div>
+ <div class="facts">
+  <div><b>오르는 길</b><span>케이블카로 숲을 지나 성지에 오릅니다</span></div>
+  <div><b>정상</b><span>해발 1,068m, 동탑(동 사원)이 있는 봉우리</span></div>
+  <div><b>식사</b><span>현지 중식과 석식 포함</span></div>
+  <div><b>저녁</b><span>롱기스트 · 니어리스트 시상과 함께 한 해를 마무리</span></div>
+ </div>
+</div></section>
+
+<section class="sec stay" style="padding-top:0"><div class="wrap">
+ <p class="eb">STAY</p>
+ <h2>반까오 거리,<br>썬플라워 하이퐁 3박</h2>
+ <p class="lead">하이퐁의 중심 반까오 거리. 라운드를 마치면 걸어서 마사지, 하이퐁 명물 게살 쌀국수(반다꾸어)를 내는 로컬 식당, 연유 커피 한 잔의 카페로 갑니다.</p>
+ <div class="ph"><img loading="lazy" src="assets/hp-sunflower.jpg" alt="썬플라워 하이퐁 호텔 야경"></div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+ <p class="eb">ITINERARY</p>
  <h2>일정</h2>
  <div class="tl">
   <div><b>12/3 목</b><span>인천 출발, 깟비 도착 · <strong>빈펄 18홀</strong> · 체크인</span></div>
@@ -122,17 +198,15 @@ footer a{text-decoration:underline}
   <div><b>12/6 일</b><span><strong>드래곤 18홀</strong> · 클럽하우스 샤워 · 깟비 출발</span></div>
   <div><b>12/7 월</b><span>인천 도착</span></div>
  </div>
-
- <h2>포함 · 불포함</h2>
- <h3>포함</h3>
+ <h4>포함</h4>
  <ul class="l">
   <li><b>왕복 항공</b> 비엣젯 · 위탁수하물 20kg</li>
   <li><b>골프 3회</b> 그린피 · 캐디피 · 카트 · 클럽 중식</li>
   <li><b>옌뜨산</b> 입장 · 케이블카 · 중식 · 석식</li>
-  <li><b>썬플라워 3박</b> 반까오 거리 · 2인 1실 · 조식</li>
-  <li><b>전 일정</b> 전용차량 · 인솔자 · 한국어 가이드 · 여행자보험</li>
+  <li><b>썬플라워 3박</b> 2인 1실 · 조식</li>
+  <li><b>전 일정</b> 고급 전용차량 · 인솔자 · 한국어 가이드 · 여행자보험</li>
  </ul>
- <h3 class="x">불포함</h3>
+ <h4 class="x">불포함</h4>
  <ul class="l">
   <li>캐디팁 1회 500,000동 × 3회</li>
   <li>12/3 · 12/4 · 12/6 석식</li>
@@ -140,7 +214,9 @@ footer a{text-decoration:underline}
   <li>선택: 귀국일 라운드 후 마사지</li>
   <li>개인 경비</li>
  </ul>
+</div></section>
 
+<div class="wrap">
  <div class="price">
   <small>1인 · 2인 1실 · 항공 포함</small>
   <div class="n">1,680,000<span> 원</span></div>
@@ -152,10 +228,9 @@ footer a{text-decoration:underline}
   <a class="btn btn-t" href="tel:05037155062">대표전화 0503-7155-0662</a>
  </div>
  <p class="fine">※ 골프는 10시 출발, 클럽 중식 후 티오프 · 골프장 사정으로 순서가 바뀔 수 있습니다 · 취소·환불 규정은 예약 시 안내드립니다</p>
-
  <div class="host"><img loading="lazy" src="assets/hp-ceo.jpg" alt="오선혜 대표"><div><small>대표 오선혜 기획</small><b>그린휴가 직접 짠 일정,<br>대표가 하이퐁에서 챙깁니다</b><p>전담 인솔자와 한국어 가이드가 매일 함께하고, 고급 전용차량으로 이동합니다.</p></div></div>
  <p class="imgs">안내문 이미지 · <a href="assets/hp-guide-1.jpg" target="_blank" rel="noopener">1쪽</a> · <a href="assets/hp-guide-2.jpg" target="_blank" rel="noopener">2쪽</a> · <a href="/">그린휴 홈으로</a></p>
-</main>
+</div>
 <footer><div class="wrap">
  <img src="assets/logo-white.png" alt="GREEN:休"><br>
  상호 그린휴 · 대표자 오선혜 · 사업자등록번호 822-16-02715<br>
