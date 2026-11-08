@@ -92,6 +92,39 @@ h2{font-family:var(--fs);font-size:27px;line-height:1.35;color:var(--ink);margin
 .stk .o{position:absolute;left:-6px;bottom:0;width:56%;transform:rotate(var(--r2));border:5px solid #fff;box-shadow:0 18px 36px rgba(0,0,0,.5);z-index:2}
 .yt .stk{margin-top:26px}.yt .stk .m{box-shadow:0 12px 26px rgba(0,0,0,.22)}.yt .stk .o{box-shadow:0 14px 28px rgba(0,0,0,.28)}
 body{overflow-x:hidden}
+/* layouts v3 */
+.c1 .v2,.c2 .s1,.c3 .fb2,.night .nimg{max-width:none}
+.course{margin-top:80px}.course:first-of-type{margin-top:40px}
+.no{display:block;font-family:var(--fs);font-weight:300;font-size:46px;line-height:1;color:var(--gold)}
+.course small{display:block;color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1px;margin-top:6px}
+.c1 .fb{position:relative;margin:0 -22px}.c1 .fb img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:100% 100%}
+.c1 .fb:after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,rgba(15,36,27,.88),transparent 58%)}
+.c1 .cap{position:absolute;left:22px;bottom:14px;z-index:1}.c1 .cap h3{margin-top:2px;color:var(--iv)}
+.c1 .v2{width:calc(84% + 22px);margin:10px -22px 0 auto;aspect-ratio:3/2;object-fit:cover;object-position:100% 100%;display:block}
+.c2 .s1{width:calc(84% + 22px);margin:0 -22px 0 auto;aspect-ratio:4/3;object-fit:cover;object-position:100% 100%;display:block}
+.c2 .row{display:grid;grid-template-columns:48% 1fr;gap:16px;align-items:end}
+.c2 .s2{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:100% 100%;margin-top:-56px;position:relative;z-index:1;display:block;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.c2 .side h3{margin-top:4px}
+.c3 .pos{position:relative}.c3 .pos>img{width:86%;aspect-ratio:720/941;object-fit:cover;object-position:100% 100%;display:block}
+.c3 .card{position:absolute;top:48px;right:-22px;width:58%;background:#0a1a13;border-top:1px solid var(--gold);padding:18px 18px 20px;box-shadow:0 12px 28px rgba(0,0,0,.4)}
+.c3 .card h3{margin-top:4px;font-size:22px}.c3 .card .by{margin-top:8px;line-height:1.6}
+.c3 .fb2{width:calc(100% + 44px);margin:28px -22px 0;aspect-ratio:3/2;object-fit:cover;object-position:100% 100%;display:block}
+.ytg{display:grid;grid-template-columns:16% 1fr;gap:10px;margin:28px -22px 0 0}
+.ytg .vt{writing-mode:vertical-rl;font-family:var(--fs);font-weight:300;font-size:30px;letter-spacing:.3em;color:var(--ink);justify-self:center}
+.ytg img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:100% 100%;display:block}
+.arch{width:70%;margin:22px auto 0;aspect-ratio:1/1;border-radius:999px 999px 0 0;overflow:hidden}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:100% 100%;display:block}
+.mat{margin:30px 8px 0;outline:1px solid var(--gold);outline-offset:8px}.mat img{width:100%;aspect-ratio:871/603;object-fit:cover;display:block}
+.night{position:relative;margin:48px -22px 0;padding:0 22px 40px;overflow:hidden;background:var(--dk)}
+.night .bgb{position:absolute;inset:0;background:url(assets/hp2-sf-night.jpg) center/cover;filter:blur(14px) brightness(.42);transform:scale(1.15)}
+.night .nimg{position:relative;width:calc(100% + 44px);margin:0 -22px;display:block}
+.night .nt{position:relative;color:var(--iv);font-family:var(--fs);font-size:20px;margin:26px 0 8px}
+.pr{position:relative;width:62%;margin:-26px 0 0;background:#fff;padding:8px 8px 0;transform:rotate(var(--r));box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.pr:nth-of-type(odd){margin-left:auto}.pr:first-of-type{margin-top:14px}
+.pr img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:100% 100%;display:block}
+.pr figcaption{font-family:var(--fs);font-size:15px;color:var(--ink);padding:7px 2px 9px}
+[data-rv].rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}[data-rv].rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-rv].rv{opacity:1;transform:none;transition:none}}
 .course h3{font-family:var(--fs);font-size:23px;margin-top:16px;font-weight:600}
 .course .by{font-size:13.5px;color:var(--gold);font-weight:700;margin-top:4px}
 .course p{color:var(--iv2);font-size:15.5px;margin-top:8px}
@@ -160,24 +193,23 @@ footer a{text-decoration:underline}
  <p class="eb">THREE COURSES</p>
  <h2>3색 골프<br>섬 · 산 · 바다</h2>
  <p class="lead">매일 다른 코스, 다른 풍경입니다. 클럽 중식 후 여유 있게 티오프합니다.</p>
- <article class="course">
-  <div class="stk" style="--r1:-1.5deg;--r2:3.5deg"><div class="m"><span class="day">12.3 목</span><img loading="lazy" src="assets/hp2-vin.jpg" alt="빈펄 골프 하이퐁, 물가의 그린" style="aspect-ratio:700/393;object-position:50% 50%"></div><div class="o"><img loading="lazy" src="assets/hp2-vin2.jpg" alt="빈펄 골프 하이퐁 페어웨이와 카트" style="aspect-ratio:3/2;object-position:50% 100%"></div></div>
-  <h3>빈펄 골프 하이퐁</h3>
+ <article class="course c1" data-rv>
+  <div class="fb"><img loading="lazy" src="assets/hp2-vin.jpg" alt="빈펄 골프 하이퐁, 물가의 그린"><div class="cap"><span class="no">01</span><small>12.3 목</small><h3>빈펄 골프 하이퐁</h3></div></div>
+  <img class="v2" loading="lazy" src="assets/hp2-vin2.jpg" alt="빈펄 골프 하이퐁 페어웨이와 카트">
   <p class="by">36홀 챔피언십 코스 · 강 위의 섬 부옌</p>
   <p>하이퐁 시내에서 가까운 섬 위의 코스. 강과 숲에 둘러싸여 도착일 첫 라운드를 편안하게 엽니다.</p>
  </article>
- <article class="course">
-  <div class="stk" style="--r1:1.2deg;--r2:-3deg"><div class="m"><span class="day">12.4 금</span><img loading="lazy" src="assets/hp3-silk.jpg" alt="PGA 실크패스 동찌에우, 산과 호수" style="aspect-ratio:4/3;object-position:50% 50%"></div><div class="o"><img loading="lazy" src="assets/hp3-silk2.jpg" alt="실크패스 소나무 숲길" style="aspect-ratio:1/1;object-position:50% 100%"></div></div>
-  <h3>PGA 실크패스 동찌에우</h3>
+ <article class="course c2" data-rv>
+  <img class="s1" loading="lazy" src="assets/hp3-silk.jpg" alt="PGA 실크패스 동찌에우, 산과 호수">
+  <div class="row"><img class="s2" loading="lazy" src="assets/hp3-silk2.jpg" alt="실크패스 소나무 숲길"><div class="side"><span class="no">02</span><small>12.4 금</small><h3>PGA 실크패스<br>동찌에우</h3></div></div>
   <p class="by">닉 팔도 설계 · 메이저 6승의 코스</p>
   <p>산자락의 소나무 숲과 호수를 끼고 도는 북부의 명문. 이날은 롱기스트와 니어리스트를 겨룹니다.</p>
   <span class="chip">롱기스트 · 니어리스트</span>
  </article>
- <article class="course">
-  <div class="stk" style="--r1:-1.2deg;--r2:3deg"><div class="m"><span class="day">12.6 일</span><img loading="lazy" src="assets/hp2-dragon.jpg" alt="드래곤 골프 링크스, 바다를 낀 코스 항공 사진" style="aspect-ratio:4/5;object-position:50% 100%"></div><div class="o"><img loading="lazy" src="assets/hp2-dragon2.jpg" alt="드래곤 골프 링크스 노을과 돌다리" style="aspect-ratio:3/2;object-position:50% 100%"></div></div>
-  <h3>드래곤 골프 링크스</h3>
-  <p class="by">그렉 노먼 설계 · 도썬 해안 링크스</p>
+ <article class="course c3" data-rv>
+  <div class="pos"><img loading="lazy" src="assets/hp2-dragon.jpg" alt="드래곤 골프 링크스, 바다를 낀 코스 항공 사진"><div class="card"><span class="no">03</span><small>12.6 일</small><h3>드래곤<br>골프 링크스</h3><p class="by">그렉 노먼 설계<br>도썬 해안 링크스</p></div></div>
   <p>통킹만 바다를 따라 도는 링크스. 바닷바람 속에서 이번 여행의 마지막 라운드를 마칩니다.</p>
+  <img class="fb2" loading="lazy" src="assets/hp2-dragon2.jpg" alt="드래곤 골프 링크스 노을과 돌다리">
  </article>
 </div></section>
 
@@ -185,7 +217,8 @@ footer a{text-decoration:underline}
  <p class="eb">12.5 SAT · YEN TU</p>
  <h2>2027년, 새해 소망을 비는 산</h2>
  <p class="lead">옌뜨산은 쩐년똥 황제가 왕위를 내려놓고 수행한 곳이자, 베트남 불교 쭉럼선종이 시작된 성지입니다. 2025년 유네스코 세계문화유산에 이름을 올렸습니다.</p>
-  <div class="stk" style="--r1:1.2deg;--r2:-3deg"><div class="m"><img loading="lazy" src="assets/hp2-yentu.jpg" alt="옌뜨산 정상 동탑과 운해" style="aspect-ratio:3/2;object-position:50% 50%"></div><div class="o"><img loading="lazy" src="assets/hp2-yentu2.jpg" alt="옌뜨산 케이블카" style="aspect-ratio:3/2;object-position:50% 100%"></div></div>
+ <div class="ytg" data-rv><div class="vt">옌뜨산 安子山</div><img loading="lazy" src="assets/hp2-yentu.jpg" alt="옌뜨산 정상 동탑과 운해"></div>
+ <div class="arch" data-rv><img loading="lazy" src="assets/hp2-yentu2.jpg" alt="옌뜨산 케이블카"></div>
  <div class="facts">
   <div><b>오르는 길</b><span>케이블카로 숲을 지나 정상 동탑까지 오릅니다</span></div>
   <div><b>정상</b><span>해발 1,068m, 구름 위의 동탑(동 사원)</span></div>
@@ -198,19 +231,19 @@ footer a{text-decoration:underline}
  <p class="eb">STAY</p>
  <h2>반까오 거리,<br>썬플라워 하이퐁 3박</h2>
  <p class="lead">하이퐁의 중심 반까오 거리. 라운드를 마치면 걸어서 마사지, 하이퐁 명물 게살 쌀국수(반다꾸어)를 내는 로컬 식당, 연유 커피 한 잔의 카페로 갑니다.</p>
- <div class="stk" style="--r1:-1.2deg;--r2:3deg"><div class="m"><img loading="lazy" src="assets/hp2-sf-day.jpg" alt="썬플라워 하이퐁 호텔 외관" style="aspect-ratio:871/603"></div><div class="o"><img loading="lazy" src="assets/hp2-sf-night.jpg" alt="썬플라워 하이퐁 호텔 야경" style="aspect-ratio:874/583"></div></div>
- <p class="swh">호텔 안 둘러보기 <span>옆으로 넘겨 보세요 ›</span></p>
- <div class="sw">
-  <figure><img loading="lazy" src="assets/hp2-breakfast.jpg" alt="썬플라워 하이퐁 조식 뷔페"><figcaption>조식 뷔페</figcaption></figure>
-  <figure><img loading="lazy" src="assets/hp2-sf-golf.jpg" alt="썬플라워 하이퐁 실내 골프 연습장"><figcaption>실내 골프 연습장</figcaption></figure>
-  <figure><img loading="lazy" src="assets/hp2-sf-jacuzzi.jpg" alt="썬플라워 하이퐁 사우나 · 온탕"><figcaption>사우나 · 온탕</figcaption></figure>
-  <figure><img loading="lazy" src="assets/hp2-sf-lobby.jpg" alt="썬플라워 하이퐁 로비"><figcaption>로비</figcaption></figure>
-  <figure><img loading="lazy" src="assets/hp2-sf-gym.jpg" alt="썬플라워 하이퐁 피트니스"><figcaption>피트니스</figcaption></figure>
-  <figure><img loading="lazy" src="assets/hp2-sunflower-gate.jpg" alt="썬플라워 하이퐁 썬플라워 정문"><figcaption>썬플라워 정문</figcaption></figure>
+ <div class="mat" data-rv><img loading="lazy" src="assets/hp2-sf-day.jpg" alt="썬플라워 하이퐁 호텔 외관"></div>
+ <div class="night" data-rv>
+  <div class="bgb"></div>
+  <img class="nimg" loading="lazy" src="assets/hp2-sf-night.jpg" alt="썬플라워 하이퐁 호텔 야경">
+  <p class="nt">라운드를 마친 저녁, 호텔 안에서</p>
+  <figure class="pr" style="--r:-4deg;z-index:9"><img loading="lazy" src="assets/hp2-breakfast.jpg" alt="썬플라워 하이퐁 아침 뷔페"><figcaption>아침 뷔페</figcaption></figure>
+  <figure class="pr" style="--r:3deg;z-index:8"><img loading="lazy" src="assets/hp2-sf-golf.jpg" alt="썬플라워 하이퐁 실내 골프 연습장"><figcaption>실내 골프 연습장</figcaption></figure>
+  <figure class="pr" style="--r:-2deg;z-index:7"><img loading="lazy" src="assets/hp2-sf-jacuzzi.jpg" alt="썬플라워 하이퐁 사우나 · 온탕"><figcaption>사우나 · 온탕</figcaption></figure>
+  <figure class="pr" style="--r:5deg;z-index:6"><img loading="lazy" src="assets/hp2-sf-lobby.jpg" alt="썬플라워 하이퐁 로비"><figcaption>로비</figcaption></figure>
  </div>
  <div class="facts" style="margin-top:18px">
   <div><b>객실</b><span>2인 1실 · 매일 조식 뷔페</span></div>
-  <div><b>호텔 시설</b><span>실내 골프 연습장 · 사우나 · 온탕 · 피트니스</span></div>
+  <div><b>호텔 시설</b><span>실내 골프 연습장 · 사우나 · 온탕 · 피트니스 · 바 · 매점</span></div>
   <div><b>주변</b><span>반까오 거리 · 걸어서 마사지 · 로컬 식당 · 카페</span></div>
  </div>
  <h4 style="margin-top:30px">숙소, 자주 묻는 질문</h4>
@@ -218,16 +251,16 @@ footer a{text-decoration:underline}
   <details><summary>어떤 호텔인가요?</summary><p>하이퐁 반까오 거리 35A의 4성급 호텔입니다. 해외 호텔 예약 사이트 평점이 높은 편입니다. 익스피디아 9.4/10(후기 62건), 트립닷컴 9.2/10(254건), 아고다 9.6/10, 부킹닷컴 9.3/10입니다. (2026년 11월 기준)</p></details>
   <details><summary>손님들이 가장 좋게 말하는 점은요?</summary><p>조식 뷔페, 친절한 직원, 깨끗한 객실, 걸어서 다닐 곳이 많은 위치를 가장 많이 꼽습니다.</p></details>
   <details><summary>조식은 어떤가요?</summary><p>호텔 뷔페로 매일 포함됩니다. 베트남식·아시아식·서양식이 고루 나옵니다. 골프 출발이 10시라 아침을 여유 있게 드실 수 있습니다.</p></details>
-  <details><summary>사우나나 목욕탕이 있나요?</summary><p>사우나, 스팀룸, 온탕(자쿠지)이 있습니다. 운영 시간과 이용 요금은 현지에서 확인해 예약 손님께 따로 안내드립니다.</p></details>
-  <details><summary>골프 연습을 할 수 있나요?</summary><p>호텔 안에 골프 연습 시설이 있습니다. 타석 구성과 이용 요금은 확인해 안내드립니다.</p></details>
+  <details><summary>사우나나 목욕탕이 있나요?</summary><p>사우나, 스팀룸, 온탕(자쿠지)이 있습니다.</p></details>
+  <details><summary>골프 연습을 할 수 있나요?</summary><p>호텔 안에 실내 골프 연습장이 있어 라운드 전후로 몸을 풀기 좋습니다.</p></details>
   <details><summary>수영장은요?</summary><p>야외 수영장이라 12월에는 이용을 권하지 않습니다.</p></details>
-  <details><summary>호텔 안에서 식사할 수 있나요?</summary><p>호텔 레스토랑이 아침부터 밤 10시까지 운영합니다. 한식·일식·베트남식·중식·양식 메뉴가 있습니다. 바와 스낵바, 작은 매점도 있습니다. 석식이 포함되지 않은 날 편하게 이용하실 수 있고, 메뉴와 가격은 확인 후 안내드립니다.</p></details>
+  <details><summary>호텔 안에서 식사할 수 있나요?</summary><p>호텔 레스토랑이 아침부터 밤 10시까지 운영합니다. 한식·일식·베트남식·중식·양식 메뉴가 있습니다. 바와 스낵바, 작은 매점도 있습니다. 석식이 포함되지 않은 날 편하게 이용하실 수 있습니다.</p></details>
   <details><summary>호텔 주변은 어떤가요?</summary><p>반까오 거리라 걸어서 마사지, 쌀국수집, 라멘집, 카페(스타벅스 포함), 한식당까지 갈 수 있습니다. 이온몰 레찬점은 차로 3~4분 거리입니다.</p></details>
   <details><summary>공항에서 얼마나 걸리나요?</summary><p>깟비 국제공항에서 차로 약 10분입니다. 전 일정 전용차량으로 이동합니다.</p></details>
   <details><summary>체크인과 체크아웃은요?</summary><p>체크인은 14시, 체크아웃은 12시입니다. 마지막 날(12/6)은 체크아웃 후 드래곤 라운드를 하고, 클럽하우스에서 샤워한 뒤 공항으로 갑니다.</p></details>
   <details><summary>그 밖의 편의는요?</summary><p>객실과 로비 모두 무료 와이파이가 되고, 피트니스와 세탁 서비스가 있습니다.</p></details>
  </div>
- <p class="fine">해외 호텔 예약 사이트(익스피디아, 트립닷컴, 아고다, 부킹닷컴, 트립어드바이저)와 현지 확인 내용을 함께 대조해 정리했습니다. 호텔 사정으로 일부 시설 운영은 달라질 수 있습니다.</p>
+ <p class="fine">호텔 사정에 따라 일부 시설 운영은 달라질 수 있습니다.</p>
 </div></section>
 
 <section class="sec" style="padding-top:0"><div class="wrap">
@@ -282,5 +315,6 @@ footer a{text-decoration:underline}
  © 2026 GREEN:休 Greenhue Travel. 사진과 영상의 무단 사용을 금합니다.
 </div></footer>
 <a class="fab" href="https://pf.kakao.com/_nHFmX/chat" target="_blank" rel="noopener">카톡 문의</a>
+<script>(function(){if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var els=document.querySelectorAll('[data-rv]');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(el){el.classList.add('rv');io.observe(el)})})();</script>
 </body>
 </html>
