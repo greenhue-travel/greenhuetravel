@@ -376,6 +376,20 @@ section,.strip{scroll-margin-top:64px}
  </div>
  <p class="pnote">1인 지상비 시작가 · 2인 1실 기준 · 항공 별도. 짝수 인원이면 몇 분이든 같은 금액이며, 홀수 인원은 1인실 사용분을 견적서에 더해 안내합니다. 소노 회원 요금은 회원 본인에게만 적용되며(회원 대회는 회원 1명 + 동반 3명까지 회원가), 정확한 금액은 견적서로 안내해 드립니다.</p>
 </div></section>
+<section class="events" id="own" aria-labelledby="o-h"><div class="wrap">
+ <p class="eb">그린휴 단독 기획</p><h2 class="t" id="o-h">대회 없이, 여행으로 즐기는 하이퐁</h2>
+ <p class="sub">그린휴가 직접 짠 일정입니다. 아래 소노 회원 골프대회와는 별개의 여행입니다.</p>
+ <div class="evc-grid">
+  <article class="evc" data-until="2026-11-21">
+   <div class="evc-ph"><img loading="lazy" src="assets/hp-silkpath.jpg" alt="PGA 실크패스 동찌에우 코스와 호수" style="object-position:50% 55%"><span class="evc-d v">하이퐁 · 12.3 – 12.7</span></div>
+   <div class="evc-b"><h3>하이퐁 3색 골프 + 옌뜨산</h3>
+    <div class="evc-p"><b>1,680,000원</b><span>3박 5일 · 항공 포함 · 2인 1실</span></div>
+    <div class="evc-c"><i>빈펄 · 실크패스 · 드래곤</i><i>옌뜨산 새해 소망 기도</i><i>롱기스트 · 니어리스트</i></div>
+    <p class="evc-m">최소 20명 · 최대 30명 · <b>11월 20일 마감</b><br>썬플라워 하이퐁(반까오 거리) 3박 · 전용차량 · 한국어 가이드 · 여행자보험 포함</p>
+    <a class="btn btn-k" href="/haiphong">자세히 보기</a></div>
+  </article>
+ </div>
+</div></section>
 <section class="events" id="events" aria-labelledby="e-h"><div class="wrap">
  <p class="eb">지금 접수 중</p><h2 class="t" id="e-h">올겨울, 회원 골프대회</h2>
  <p class="sub">소노호텔앤리조트 공식 대회, 그린휴가 접수와 운영을 맡습니다.</p>
@@ -609,7 +623,7 @@ function close(){p.classList.remove('on');}
 p.addEventListener('click',function(e){var a=e.target.getAttribute&&e.target.getAttribute('data-ghp');if(e.target===p||a==='close'){close();}if(a==='today'){try{localStorage.setItem(k,t);}catch(x){}close();}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
 </script>
-<script>(function(){var t=new Date();t.setHours(0,0,0,0);document.querySelectorAll('[data-until]').forEach(function(e){var d=new Date(e.getAttribute('data-until')+'T00:00:00');if(t>=d)e.remove();});var g=document.querySelectorAll('.evc');if(!g.length){var ev=document.getElementById('events');if(ev)ev.remove();var st=document.getElementById('evStrip');if(st)st.remove();}})();</script>
+<script>(function(){var t=new Date();t.setHours(0,0,0,0);document.querySelectorAll('[data-until]').forEach(function(e){var d=new Date(e.getAttribute('data-until')+'T00:00:00');if(t>=d)e.remove();});var ow=document.getElementById('own');if(ow&&!ow.querySelector('.evc'))ow.remove();var g=document.querySelectorAll('#events .evc');if(!g.length){var ev=document.getElementById('events');if(ev)ev.remove();var st=document.getElementById('evStrip');if(st)st.remove();}})();</script>
 <script>(function(){document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;var h=a.getAttribute('href')||'';var sec=(a.closest('section,header,nav,.ghp,.strip,footer')||{}).id||(a.closest('.ghp')?'popup':'')||'';var label=(a.textContent||'').trim().slice(0,40);
 if(h.indexOf('pf.kakao.com')>-1){var ins=a.closest('#life')||/인생 후반/.test(label);gtag('event',ins?'insurance_click':'kakao_click',{link_text:label,section:sec});}
 else if(h.indexOf('tel:')===0){gtag('event','phone_click',{link_text:label,section:sec});}
