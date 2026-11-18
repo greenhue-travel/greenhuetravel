@@ -2,6 +2,9 @@
 
 - 배포: Netlify가 이 저장소 main 브랜치를 자동 배포
 - 공개 파일: index.html, refund.html, robots.txt, sitemap.xml, google 인증 파일, assets/
-- 원본 조각: src/ (index.html = deploy_head + v2_body + popup + datescript + trackscript 를 이어 붙인 것)
+- 원본 조각: src/ 는 옛 조각(2026-11 초). 지금은 index.html 을 직접 고친다 (src 와 다름)
 - 카톡 미리보기(og:image): 2026-11-05~ 브랜드 카드 og-greenhue-2026c.jpg (취급 지역: 베트남 북부 · 괌 · 일본)
 - 운영 안내: 구글 드라이브 '그린휴 휴비 자료실' > '그린휴 홈페이지 운영 인수인계'
+
+## 변경 기록
+- 2026-11-18: 하롱베이 신상품(halong.html, FLC 그랜드 호텔 하롱 3박 5일 · 항공 포함) 추가, 대표 상품 카드 괌 → 하롱베이 교체. 괌은 첫 화면 히어로·가격줄·메타에서 내리고 지역 안내에 "괌, 함께한 기록"(2026.06 회원 대회 50명)으로 남김. 괌 FAQ·후기·기록 페이지는 유지.
